@@ -6,7 +6,6 @@
 
     <groupId>com.pwr.rmi.spaceteam</groupId>
     <artifactId>rmi_spaceteam</artifactId>
-    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <build>
