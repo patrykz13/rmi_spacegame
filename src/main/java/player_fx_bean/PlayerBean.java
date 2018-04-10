@@ -220,11 +220,9 @@ public class PlayerBean extends VBox implements Serializable {
 
 
         // Gracz 2:
-        //labelDevice2Player2_Parameter1_Value.textProperty().bind(integerPropertyNumberOfVentilators.asString());
         doublePropertyCombustionTemperature.bind(sliderDevice3Player2_Value.valueProperty());
         doublePropertyImpulseValue.bind(sliderDevice3Player2_Value.valueProperty());
         labelImpulseValue.textProperty().bind(doublePropertyImpulseValue.asString());
-        //labelDevice2Player2_Parameter3_Value.textProperty().bind(Bindings.format("%.2f", doublePropertyEngineTemperature));
 
         // Gracz 3:
         typeOfTriggerMechanism_1.bind(radioButtonDevice2Player3_Option1.selectedProperty());
@@ -240,6 +238,12 @@ public class PlayerBean extends VBox implements Serializable {
             else
                 labelGameStatus.setText("Status aktywnej gry: zostałeś wyrzucony z gry.");
         });
+
+        sliderDevice3Player1_Value.valueProperty().addListener((obs, oldval, newVal) ->
+                sliderDevice3Player1_Value.setValue(Math.round(newVal.doubleValue())));
+
+        sliderDevice3Player2_Value.valueProperty().addListener((obs, oldval, newVal) ->
+                sliderDevice3Player2_Value.setValue(Math.round(newVal.doubleValue())));
 
         textFieldDevice2Player2_Parameter2_Value.textProperty().addListener((o, oldVal, newVal) -> {
             try {
