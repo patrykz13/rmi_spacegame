@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="188.0" prefWidth="393.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controller.WelcomeController">
+  <children>
+    <HBox alignment="CENTER" prefHeight="39.0" prefWidth="393.0000999999975">
+      <children>
+        <Label text="nick" />
+      </children>
+    </HBox>
+    <HBox alignment="CENTER" prefHeight="16.0" prefWidth="366.0">
+      <children>
+        <TextField fx:id="textFieldLogin" prefWidth="200.0" />
+      </children>
+    </HBox>
+    <HBox alignment="CENTER" prefHeight="133.0" prefWidth="393.0">
+      <children>
+        <Button mnemonicParsing="false" onAction="#enterTheGame_onAction" prefHeight="35.0" prefWidth="152.0" text="wejdź do gry" />
+      </children>
+    </HBox>
+  </children>
+</VBox>

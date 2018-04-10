@@ -9,9 +9,18 @@
         <module name="commander" />
         <module name="player_1" />
         <module name="player_2" />
-        <module name="player_3" />
+        <module name="player_3 (1)" />
         <module name="server" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="commander (1)" target="1.5" />
+      <module name="common" target="1.8" />
+      <module name="player_1 (1)" target="1.5" />
+      <module name="player_2 (1)" target="1.5" />
+      <module name="player_3" target="1.5" />
+      <module name="player_3 (1)" target="1.5" />
+      <module name="server (1)" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

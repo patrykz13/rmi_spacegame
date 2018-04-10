@@ -1,3 +1,5 @@
+package commander;
+
 import common.CommanderInterface;
 import common.ServerInterface;
 import controller.CommanderController;

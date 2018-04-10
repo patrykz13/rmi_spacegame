@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 public class Main extends Application {
     private static Stage mainStage;
     public static String login;
@@ -17,7 +18,7 @@ public class Main extends Application {
         try {
             setMainStage(primaryStage);
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/fxml/main.fxml"));
+            loader.setLocation(getClass().getResource("fxml/player.fxml"));
             loader.load();
             Parent root = loader.getRoot();
             primaryStage.setScene(new Scene(root, 391, 222));

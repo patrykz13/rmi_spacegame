@@ -30,9 +30,9 @@ public class Server extends UnicastRemoteObject implements ServerInterface
     public void registerPlayer(PlayerInterface connection, String type, String name, String commanderName) throws RemoteException
     {
         System.out.println("Player " + name + type + " has connected.");
-        ConnectedPlayer player = new ConnectedPlayer(connection, type, name,);
-        players.put(name, player);
         ConnectedCommander connectedCommander = commanders.get(commanderName);
+        ConnectedPlayer player = new ConnectedPlayer(connection, type, name,connectedCommander);
+        players.put(name, player);
         if (connectedCommander != null)
         {
             connectedCommander.getConnection().receivePlayerList(createPlayersList());

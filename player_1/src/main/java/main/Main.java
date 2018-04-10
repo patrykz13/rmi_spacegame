@@ -12,8 +12,11 @@ public class Main extends Application {
     private static Stage mainStage;
     public static String login;
     public static String commander;
+
     @Override
     public void start(Stage primaryStage) {
+                    /*
+
         try {
             setMainStage(primaryStage);
             FXMLLoader loader = new FXMLLoader();
@@ -27,6 +30,22 @@ public class Main extends Application {
         } catch (IOException ioEcx) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ioEcx);
         }
+        */
+
+            FXMLLoader loader = new FXMLLoader();
+            try {
+                Main.mainStage = primaryStage;
+                loader.setLocation(getClass().getClassLoader().getResource("fxml/welcome.fxml"));
+                loader.load();
+                Parent root = loader.getRoot();
+                mainStage.setTitle("Listen To Your Captain - ver. Client no. 1");
+                mainStage.resizableProperty().setValue(Boolean.FALSE);
+                mainStage.setScene(new Scene(root, 819, 325));
+                mainStage.centerOnScreen();
+                mainStage.show();
+            } catch (IOException ioEcx) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ioEcx);
+            }
     }
 
     @Override

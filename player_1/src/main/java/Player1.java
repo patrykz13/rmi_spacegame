@@ -2,7 +2,6 @@ import common.PlayerInterface;
 import common.ServerInterface;
 import common.SpaceCommand;
 import controller.Player1Controller;
-import controller.PlayerController;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;
@@ -15,13 +14,13 @@ public class Player1 extends UnicastRemoteObject implements PlayerInterface
     private ServerInterface server;
     private Player1Controller controller;
 
-    public Player1(String name, Player1Controller controller, String type) throws RemoteException
+    public Player1(String name, Player1Controller controller, String type,String commanderName) throws RemoteException
     {
         try
         {
             String url = "rmi://localhost/sserver";
             server = (ServerInterface) Naming.lookup(url);
-            server.registerPlayer(this, type, name);
+            server.registerPlayer(this, type, name,commanderName);
             this.controller = controller;
         } catch (RemoteException ex)
         {
@@ -45,13 +44,12 @@ public class Player1 extends UnicastRemoteObject implements PlayerInterface
 
     //<editor-fold desc="rmi">
 
-    @Override
+
     public void confirmConnection(String s) throws RemoteException
     {
 
     }
 
-    @Override
     public void receiveCommand(SpaceCommand spaceCommand) throws RemoteException
     {
         System.out.println("Received command " + spaceCommand.getType() + " " + spaceCommand.getParameters() + ".");
