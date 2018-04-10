@@ -23,9 +23,9 @@ public class Main extends Application {
                 loader.setLocation(getClass().getClassLoader().getResource("fxml/welcome.fxml"));
                 loader.load();
                 Parent root = loader.getRoot();
-                mainStage.setTitle("Listen To Your Captain - ver. Client no. 1");
+                mainStage.setTitle("Spaceteam v.2");
                 mainStage.resizableProperty().setValue(Boolean.FALSE);
-                mainStage.setScene(new Scene(root, 819, 325));
+                mainStage.setScene(new Scene(root, 391, 222));
                 mainStage.centerOnScreen();
                 mainStage.show();
             } catch (IOException ioEcx) {

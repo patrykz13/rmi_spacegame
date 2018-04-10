@@ -33,7 +33,4 @@ public class MainController implements Initializable {
         }
 
     }
-
-    public void enterTheGame_onAction(ActionEvent actionEvent) {
-    }
 }

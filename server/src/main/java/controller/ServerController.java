@@ -1,5 +1,7 @@
 package controller;
 
+import common.SpaceCommand;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -37,8 +39,8 @@ public class ServerController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         tableColumnCommanderName.setCellValueFactory(new PropertyValueFactory<ConnectedCommander,String>("name"));
         tableColumnPlayerName.setCellValueFactory(new PropertyValueFactory<ConnectedPlayer,String>("name"));
-        tableColumnPlayerCommander.setCellValueFactory(new PropertyValueFactory<ConnectedPlayer,String>("commander.getName()"));
-
+        tableColumnPlayerCommander.setCellValueFactory(new PropertyValueFactory<ConnectedPlayer,String>("s"));
+        //(cellData -> new SimpleStringProperty(cellData.getValue().getCommander().name))
         tableViewCommander.setItems(commanders);
         tableViewPlayer.setItems(players);
     }
@@ -50,8 +52,7 @@ public class ServerController implements Initializable {
             //kapitan.setMsg("Gracz :"+users.getUsers().get(PlayerList.getSelectedIndex()).getName()+" został wyrzucony z gry"+"\n");
 
             players.remove(tableViewPlayer.getSelectionModel().getSelectedItem());
-        System.out.println(tableViewPlayer.getSelectionModel().getSelectedItem().getName());
-            ss.getPlayers().remove(tableViewPlayer.getSelectionModel().getSelectedItem());
+            ss.getPlayers().remove(tableViewPlayer.getSelectionModel().getSelectedItem().getName());
             refreshTables();
     }
 
@@ -62,19 +63,21 @@ public class ServerController implements Initializable {
     private void refreshTables() {
         commanders.clear();
         players.clear();
-        for (Map.Entry<String, ConnectedCommander> entry : ss.getCommanders().entrySet())
-        {
-            commanders.add(entry.getValue());
+        if(ss.getCommanders()!=null) {
+            for (Map.Entry<String, ConnectedCommander> entry : ss.getCommanders().entrySet()) {
+                commanders.add(entry.getValue());
+            }
         }
-        for (Map.Entry<String, ConnectedPlayer> entry : ss.getPlayers().entrySet())
-        {
-            players.add(entry.getValue());
+        if(ss.getPlayers()!=null) {
+            for (Map.Entry<String, ConnectedPlayer> entry : ss.getPlayers().entrySet()) {
+                players.add(entry.getValue());
+            }
         }
     }
 
     public void buttonKickCommander_onAction(ActionEvent actionEvent) {
-        ss.getCommanders().remove(tableViewCommander.getSelectionModel().getSelectedItem());
         commanders.remove(tableViewCommander.getSelectionModel().getSelectedItem());
+        ss.getCommanders().remove(tableViewCommander.getSelectionModel().getSelectedItem().getName());
         refreshTables();
     }
 

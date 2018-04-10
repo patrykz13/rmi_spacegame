@@ -24,7 +24,7 @@ public class Main extends Application
             loader.setLocation(getClass().getResource("/fxml/server.fxml"));
             loader.load();
             Parent root = loader.getRoot();
-            primaryStage.setScene(new Scene(root, 391, 222));
+            primaryStage.setScene(new Scene(root, 906, 406));
             //primaryStage.getIcons().add(new Image("/images/phone.png"));
             primaryStage.centerOnScreen();
 
