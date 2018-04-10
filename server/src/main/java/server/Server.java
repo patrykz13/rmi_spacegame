@@ -78,7 +78,7 @@ public class Server extends UnicastRemoteObject implements ServerInterface
     public void broadcastScore(int score) throws RemoteException
     {
         System.out.println("Score changed by " + score);
-        commander.getConnection().receiveScore(score);
+        //commander.getConnection().receiveScore(score);
     }
 
     @Override
