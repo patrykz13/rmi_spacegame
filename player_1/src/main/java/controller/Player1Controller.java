@@ -1,6 +1,7 @@
 package controller;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import main.Main;
 
@@ -9,7 +10,8 @@ import java.util.ResourceBundle;
 
 public class Player1Controller implements Initializable {
 
-
+    @FXML
+    PlayerBean playerClientBean;
     public void initialize(URL location, ResourceBundle resources) {
 
         try
