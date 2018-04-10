@@ -245,17 +245,6 @@ public class PlayerBean extends VBox implements Serializable {
         sliderDevice3Player2_Value.valueProperty().addListener((obs, oldval, newVal) ->
                 sliderDevice3Player2_Value.setValue(Math.round(newVal.doubleValue())));
 
-        textFieldDevice2Player2_Parameter2_Value.textProperty().addListener((o, oldVal, newVal) -> {
-            try {
-                Double result = (double) integerPropertyNumberOfVentilators.get() / Double.valueOf(newVal);
-                if (Double.POSITIVE_INFINITY != result)
-                    doublePropertyEngineTemperature.setValue(result);
-                else
-                    doublePropertyEngineTemperature.setValue(0.0);
-            } catch (NumberFormatException e) {
-                doublePropertyEngineTemperature.setValue(0.0);
-            }
-        });
 
 
     }
