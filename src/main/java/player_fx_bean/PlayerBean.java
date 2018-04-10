@@ -29,6 +29,8 @@ public class PlayerBean extends VBox implements Serializable {
     private final BooleanProperty typeOfTriggerMechanism_1 = new SimpleBooleanProperty(false);
     private final BooleanProperty typeOfTriggerMechanism_2 = new SimpleBooleanProperty(false);
     private final BooleanProperty booleanPropertyLoadBullet = new SimpleBooleanProperty(false);
+    private final DoubleProperty doublePropertyImpulseValue = new SimpleDoubleProperty(0.0);
+    private final DoubleProperty doublePropertyTurnValue = new SimpleDoubleProperty(0.0);
 
     @FXML
     public Label labelTimeToTheEnd;
@@ -39,6 +41,9 @@ public class PlayerBean extends VBox implements Serializable {
     public Label labelCommander;
     public Label labelGameStatus;
     public Label labelPlayer;
+    public Label labelImpulseValue;
+    public Label labelTurnValue;
+
     @FXML
     public Label   labelNumberOfPlayers, labelPanelName,
             labelCommanderCommand, labelDevice1Player1_Name,
@@ -210,10 +215,15 @@ public class PlayerBean extends VBox implements Serializable {
         fuelCombustionMode_1.bind(radioButtonDevice2Player1_Option1.selectedProperty());
         fuelCombustionMode_2.bind(radioButtonDevice2Player1_Option2.selectedProperty());
         doublePropertyAngleOfAttack.bind(sliderDevice3Player1_Value.valueProperty());
+        doublePropertyTurnValue.bind(sliderDevice3Player1_Value.valueProperty());
+        labelTurnValue.textProperty().bind(doublePropertyTurnValue.asString());
+
 
         // Gracz 2:
         //labelDevice2Player2_Parameter1_Value.textProperty().bind(integerPropertyNumberOfVentilators.asString());
         doublePropertyCombustionTemperature.bind(sliderDevice3Player2_Value.valueProperty());
+        doublePropertyImpulseValue.bind(sliderDevice3Player2_Value.valueProperty());
+        labelImpulseValue.textProperty().bind(doublePropertyImpulseValue.asString());
         //labelDevice2Player2_Parameter3_Value.textProperty().bind(Bindings.format("%.2f", doublePropertyEngineTemperature));
 
         // Gracz 3:
