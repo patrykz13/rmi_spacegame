@@ -373,6 +373,16 @@
                 </children>
               </HBox>
               <Region prefHeight="29.0" prefWidth="318.0" />
+              <HBox prefHeight="24.0" prefWidth="307.0">
+                <children>
+                  <Label alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="Status gry:" textFill="BLACK" />
+                </children>
+              </HBox>
+              <HBox prefHeight="24.0" prefWidth="307.0">
+                <children>
+                  <Label id="labelPoints" fx:id="labelGameStatus" alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="gra zaczęta!" textFill="BLACK" />
+                </children>
+              </HBox>
             </children>
           </VBox>
         </children>
