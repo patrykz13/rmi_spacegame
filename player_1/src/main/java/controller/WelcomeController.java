@@ -1,6 +1,8 @@
 package controller;
 
 import common.ServerInterface;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -18,6 +20,7 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,8 +29,14 @@ public class WelcomeController extends UnicastRemoteObject implements Initializa
 
 
     public TextField textFieldLogin;
-    public ComboBox comboBoxCommander;
+    public ComboBox<String> comboBoxCommander;
     private ServerInterface server;
+    private List<String> listOfCommanders;
+    private ObservableList<String> commandersNames = FXCollections.observableArrayList();
+
+    public WelcomeController() throws RemoteException
+    {}
+
 
     public void enterTheGame_onAction(ActionEvent actionEvent) {
         Main.commander=comboBoxCommander.getSelectionModel().getSelectedItem().toString();
@@ -57,7 +66,7 @@ public class WelcomeController extends UnicastRemoteObject implements Initializa
         {
             String url = "rmi://localhost/sserver";
             server = (ServerInterface) Naming.lookup(url);
-            server.g
+            listOfCommanders=server.getListOfCommanders();
         } catch (RemoteException ex)
         {
             System.out.println("Server RemoteException.");
@@ -71,5 +80,9 @@ public class WelcomeController extends UnicastRemoteObject implements Initializa
             System.out.println("Server MalformedURLException.");
             System.out.println(ex.getMessage());
         }
+        comboBoxCommander.setItems(commandersNames);
+        if(listOfCommanders!=null)
+            commandersNames.addAll(listOfCommanders);
+
     }
 }

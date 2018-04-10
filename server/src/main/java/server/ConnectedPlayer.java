@@ -5,7 +5,7 @@ import common.PlayerInterface;
 public class ConnectedPlayer
 {
     private PlayerInterface connection;
-    ConnectedCommander commander;
+    private ConnectedCommander commander;
     private String type;
     private String name;
 
@@ -14,6 +14,8 @@ public class ConnectedPlayer
         this.connection = connection;
         this.type = type;
         this.name = name;
+
+
     }
 
     public PlayerInterface getConnection()
