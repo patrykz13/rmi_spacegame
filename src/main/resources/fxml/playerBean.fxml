@@ -8,7 +8,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
-
+<fx:root prefHeight="900.0" prefWidth="1600.0" type="javafx.scene.layout.VBox" xmlns:fx="http://javafx.com/fxml/1"
+         xmlns="http://javafx.com/javafx/9.0.1">
 <VBox prefHeight="459.0" prefWidth="718.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="PlayerBean">
   <children>
     <HBox alignment="CENTER" prefHeight="58.0" prefWidth="599.9998779296875">
@@ -398,3 +399,4 @@
     </HBox>
   </children>
 </VBox>
+</fx:root>
