@@ -21,6 +21,7 @@ public class MainController implements Initializable {
 
     public void initialize(URL location, ResourceBundle resources) {
 
+        playerBean.initPlayerAndCaptainNicknames(Main.login, Main.commander, "kabina pilota");
 
         try
         {
