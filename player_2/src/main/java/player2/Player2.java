@@ -3,7 +3,7 @@ package player2;
 import common.PlayerInterface;
 import common.ServerInterface;
 import common.SpaceCommand;
-import controller.Player2Controller;
+import controller.MainController;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;
@@ -14,9 +14,9 @@ import java.rmi.server.UnicastRemoteObject;
 public class Player2 extends UnicastRemoteObject implements PlayerInterface
 {
     private ServerInterface server;
-    private Player2Controller controller;
+    private MainController controller;
 
-    public Player2(String name, Player2Controller controller, String type, String commanderName) throws RemoteException
+    public Player2(String name, MainController controller, String type, String commanderName) throws RemoteException
     {
         try
         {

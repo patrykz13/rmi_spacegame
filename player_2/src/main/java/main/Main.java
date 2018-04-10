@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,23 +14,25 @@ public class Main extends Application {
     private static Stage mainStage;
     public static String login;
     public static String commander;
+
     @Override
     public void start(Stage primaryStage) {
-        try {
-            setMainStage(primaryStage);
+
+
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("fxml/player.fxml"));
-            loader.load();
-            Parent root = loader.getRoot();
-            primaryStage.setScene(new Scene(root, 391, 222));
-            //primaryStage.getIcons().add(new Image("/images/phone.png"));
-            primaryStage.centerOnScreen();
-
-
-            primaryStage.show();
-        } catch (IOException ioEcx) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ioEcx);
-        }
+            try {
+                Main.mainStage = primaryStage;
+                loader.setLocation(getClass().getClassLoader().getResource("fxml/welcome.fxml"));
+                loader.load();
+                Parent root = loader.getRoot();
+                mainStage.setTitle("Listen To Your Captain - ver. Client no. 1");
+                mainStage.resizableProperty().setValue(Boolean.FALSE);
+                mainStage.setScene(new Scene(root, 819, 325));
+                mainStage.centerOnScreen();
+                mainStage.show();
+            } catch (IOException ioEcx) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ioEcx);
+            }
     }
 
     @Override

@@ -1,44 +1,39 @@
 package controller;
 
+import common.ServerInterface;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import main.Main;
+import player2.Player2;
+import player_fx_bean.PlayerBean;
 
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class MainController {
+public class MainController implements Initializable {
+
+    @FXML
+    PlayerBean playerBean;
+    private Player2 player;
+    private ServerInterface server;
 
 
-    public TextField textFieldLogin;
-    public ComboBox comboBoxCommander;
+    public void initialize(URL location, ResourceBundle resources) {
+
+        playerBean.initPlayerAndCaptainNicknames(Main.login, Main.commander, "działko laserowe");
+
+        try
+        {
+            player = new Player2(Main.login, this, "działko laserowe",Main.commander);
+            server = player.getServer();
+        } catch (Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
+
+    }
 
     public void enterTheGame_onAction(ActionEvent actionEvent) {
-       // Main.commander=comboBoxCommander.getSelectionModel().getSelectedItem().toString();
-       // Main.login=textFieldLogin.getText();
-
-        FXMLLoader loader = new FXMLLoader();
-        try {
-            loader.setLocation(getClass().getClassLoader().getResource("fxml/main.fxml"));
-            loader.load();
-            Parent parent = loader.getRoot();
-            Stage primaryStage = new Stage();
-            Main.setMainStage(primaryStage);
-            primaryStage.setTitle("Listen To Your Captain - ver. Client no. 1");
-            primaryStage.setMinWidth(600);
-            primaryStage.setMinHeight(900);
-            primaryStage.setScene(new Scene(parent, 1600, 900));
-            Stage stage = (Stage) textFieldLogin.getScene().getWindow();
-            stage.hide();
-            primaryStage.show();
-        } catch (IOException ioEcx) {
-            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ioEcx);
-        }
     }
 }

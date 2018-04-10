@@ -25,7 +25,7 @@ public class MainController implements Initializable {
 
         try
         {
-            player = new Player1(Main.login, this, "Cockpit",Main.commander);
+            player = new Player1(Main.login, this, "kabina pilota",Main.commander);
             server = player.getServer();
         } catch (Exception ex)
         {
