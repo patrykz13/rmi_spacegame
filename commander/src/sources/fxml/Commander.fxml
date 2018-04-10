@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="401.0000999999975" prefWidth="888.9998779296875" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controller.CommanderController">
+  <children>
+    <HBox alignment="CENTER" prefHeight="84.0" prefWidth="577.0">
+      <children>
+        <Label text="Panel kapitana">
+          <font>
+            <Font size="30.0" />
+          </font>
+        </Label>
+      </children>
+    </HBox>
+    <HBox prefHeight="270.0" prefWidth="577.0">
+      <children>
+        <Region prefHeight="270.0" prefWidth="71.0" />
+        <VBox alignment="CENTER" prefHeight="270.0" prefWidth="234.0">
+          <children>
+            <TableView fx:id="tableViewPlayer" prefHeight="236.0" prefWidth="209.00009999999747">
+              <columns>
+                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="232.0" text="gracz" fx:id="tableColumnPlayerName" />
+              </columns>
+            </TableView>
+            <Button fx:id="buttonRefresh" mnemonicParsing="false" onAction="#refresh_onAction" text="odśwież" />
+          </children>
+        </VBox>
+        <VBox prefHeight="270.0" prefWidth="336.0">
+          <children>
+            <HBox alignment="CENTER" prefHeight="22.0" prefWidth="269.9998779296875">
+              <children>
+                <Label text="działo laserowe" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="27.0" prefWidth="270.0000999999975">
+              <children>
+                <Label text="" />
+                <TextField fx:id="textFieldLaserGun" prefWidth="200.0" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="22.0" prefWidth="269.9998779296875">
+              <children>
+                <Label text="działo bojowe " />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="27.0" prefWidth="270.0000999999975">
+              <children>
+                <Label text="" />
+                <TextField fx:id="textFieldBattleCannon" prefWidth="200.0" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="22.0" prefWidth="269.9998779296875">
+              <children>
+                <Label text="kabina pilota" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="27.0" prefWidth="270.0000999999975">
+              <children>
+                <Label text="" />
+                <TextField fx:id="textFieldCockpit" prefWidth="200.0" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="27.0" prefWidth="315.0" />
+            <HBox alignment="CENTER" prefHeight="22.0" prefWidth="269.9998779296875">
+              <children>
+                <Label prefWidth="146.0" text="Punkty dla drużyny" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="27.0" prefWidth="270.0000999999975">
+              <children>
+                <Label text="" />
+                <TextField prefWidth="200.0" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="27.0" prefWidth="315.0">
+              <children>
+                <Button fx:id="buttonGivePoints" mnemonicParsing="false" onAction="#givePoints_onAction" text="przyznaj punkty" />
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+        <VBox prefHeight="270.0" prefWidth="260.0">
+          <children>
+            <TextArea prefHeight="270.0" prefWidth="257.0" wrapText="true" />
+          </children>
+        </VBox>
+        <Region prefHeight="270.0" prefWidth="70.0" />
+      </children>
+    </HBox>
+    <HBox alignment="CENTER" prefHeight="59.0" prefWidth="889.0">
+      <children>
+        <Button fx:id="buttonStartRound" mnemonicParsing="false" onAction="#startRound_onAction" prefWidth="349.0" text="rozpocznij runde/wydaj polecenia" />
+      </children>
+    </HBox>
+  </children>
+</VBox>

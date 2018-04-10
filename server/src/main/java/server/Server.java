@@ -1,6 +1,10 @@
 package server;
 
 
+import common.CommanderInterface;
+import common.PlayerInterface;
+import common.ServerInterface;
+import common.SpaceCommand;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
@@ -14,23 +18,24 @@ public class Server extends UnicastRemoteObject implements ServerInterface
     private HashMap<String, ConnectedCommander> commanders;
     private HashMap<String, ConnectedPlayer> players;
 
-    public SpaceServer() throws RemoteException
+    public Server() throws RemoteException
     {
         players = new HashMap<>();
-        commanders = new HashMap<>()
+        commanders = new HashMap<>();
     }
 
     //<editor-fold desc="rmi">
 
     @Override
-    public void registerPlayer(SpaceInterfacePlayer connection, SpaceCommandType type, String name) throws RemoteException
+    public void registerPlayer(PlayerInterface connection, String type, String name, String commanderName) throws RemoteException
     {
         System.out.println("Player " + name + type + " has connected.");
-        ConnectedPlayer player = new ConnectedPlayer(connection, type, name);
+        ConnectedPlayer player = new ConnectedPlayer(connection, type, name,);
         players.put(name, player);
-        if (commander != null)
+        ConnectedCommander connectedCommander = commanders.get(commanderName);
+        if (connectedCommander != null)
         {
-            commander.getConnection().receivePlayerList(createPlayersList());
+            connectedCommander.getConnection().receivePlayerList(createPlayersList());
         } else
         {
             System.out.println("Error, commander is null.");
@@ -38,17 +43,20 @@ public class Server extends UnicastRemoteObject implements ServerInterface
     }
 
     @Override
-    public void registerCommander(SpaceInterfaceCommander connection, String name) throws RemoteException
+    public void registerCommander(CommanderInterface connection, String name) throws RemoteException
     {
         System.out.println("Commander " + name + " has connected.");
-        commander = new ConnectedCommander(connection, name);
+        ConnectedCommander commander = new ConnectedCommander(connection, name);
         commander.getConnection().receiveScore(2137);
+        commanders.put(name,commander);
     }
 
     @Override
     public void removePlayer(String name) throws RemoteException
     {
         System.out.println("Commander " + name + " has connected.");
+        ConnectedPlayer player = players.get(name) ;
+        ConnectedCommander commander = player.getCommander();
         players.remove(name);
         if (commander != null)
         {
@@ -63,7 +71,7 @@ public class Server extends UnicastRemoteObject implements ServerInterface
     public void removeCommander(String name) throws RemoteException
     {
         System.out.println("Commander " + name + " has connected.");
-        commander = null;
+        commanders.remove(name);
     }
 
     @Override
