@@ -212,9 +212,9 @@ public class PlayerBean extends VBox implements Serializable {
         doublePropertyAngleOfAttack.bind(sliderDevice3Player1_Value.valueProperty());
 
         // Gracz 2:
-        labelDevice2Player2_Parameter1_Value.textProperty().bind(integerPropertyNumberOfVentilators.asString());
+        //labelDevice2Player2_Parameter1_Value.textProperty().bind(integerPropertyNumberOfVentilators.asString());
         doublePropertyCombustionTemperature.bind(sliderDevice3Player2_Value.valueProperty());
-        labelDevice2Player2_Parameter3_Value.textProperty().bind(Bindings.format("%.2f", doublePropertyEngineTemperature));
+        //labelDevice2Player2_Parameter3_Value.textProperty().bind(Bindings.format("%.2f", doublePropertyEngineTemperature));
 
         // Gracz 3:
         typeOfTriggerMechanism_1.bind(radioButtonDevice2Player3_Option1.selectedProperty());
