@@ -2,6 +2,7 @@ package common;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.util.List;
 
 public interface ServerInterface extends Remote
 {
@@ -11,4 +12,6 @@ public interface ServerInterface extends Remote
     void removeCommander(String name) throws RemoteException;
     void broadcastScore(int score) throws RemoteException;
     void broadcastCommand(SpaceCommand command) throws RemoteException;
+    List<String> getListOfCommanders() throws RemoteException;
+
 }
