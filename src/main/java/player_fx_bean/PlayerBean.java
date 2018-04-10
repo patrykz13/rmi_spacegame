@@ -246,6 +246,13 @@ public class PlayerBean extends VBox implements Serializable {
 
     }
 
+    // Metody publiczne:
+    public void initPlayerAndCaptainNicknames(String nickname, String captainNickname, String panelName) {
+        labelPlayer.setText(nickname);
+        stringPropertyCaptainNickname.setValue(captainNickname);
+        stringPropertyPanelName.setValue(panelName);
+    }
+
     private void initRadioButtons() {
         ToggleGroup toggleGroupDevice2Player1 = new ToggleGroup();
         radioButtonDevice2Player1_Option1.setToggleGroup(toggleGroupDevice2Player1);
