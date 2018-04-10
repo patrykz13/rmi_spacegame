@@ -6,7 +6,7 @@ import common.CommanderInterface;
 public class ConnectedCommander
 {
     private CommanderInterface connection;
-    private String name;
+    public String name;
 
     public ConnectedCommander(CommanderInterface connection, String name)
     {

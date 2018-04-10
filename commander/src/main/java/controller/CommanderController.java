@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import main.Main;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -25,8 +26,8 @@ public class CommanderController implements Initializable {
     public TableView tableViewPlayer;
     public TableColumn tableColumnPlayerName;
     public Button buttonRefresh;
-    public Commander commander;
-    public ServerInterface server;
+    private Commander commander;
+    private ServerInterface server;
 
     Integer totalScore = 0;
     public void givePoints_onAction(ActionEvent actionEvent) {
@@ -37,8 +38,16 @@ public class CommanderController implements Initializable {
         if (commander != null)
         {
             List<Integer> parameters = new ArrayList<Integer>();
-            parameters.add(Integer.valueOf(tex.getText()));
-            broadcastCommand(SpaceCommandType.BOOST, parameters);
+            parameters.add(Integer.valueOf(textFieldCockpit.getText()));
+            broadcastCommand("Cockpit", parameters);
+
+            List<Integer> parameters2 = new ArrayList<Integer>();
+            parameters2.add(Integer.valueOf(textFieldBattleCannon.getText()));
+            broadcastCommand("BattleCanon", parameters2);
+
+            List<Integer> parameters3 = new ArrayList<Integer>();
+            parameters3.add(Integer.valueOf(textFieldLaserGun.getText()));
+            broadcastCommand("LaserGun", parameters3);
         }
     }
 
@@ -47,7 +56,7 @@ public class CommanderController implements Initializable {
 
         try
         {
-            commander = new Commander("Kapitan Test", this);
+            commander = new Commander(Main.login, this);
             server = commander.getServer();
         } catch (Exception ex)
         {
@@ -59,7 +68,7 @@ public class CommanderController implements Initializable {
     public void refresh_onAction(ActionEvent actionEvent) {
     }
 
-    private void broadcastCommand(SpaceCommandType type, List<Integer> parameters)
+    private void broadcastCommand(String type, List<Integer> parameters)
     {
         try
         {

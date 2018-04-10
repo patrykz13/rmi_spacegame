@@ -13,8 +13,8 @@
         <module>commander</module>
         <module>player_1</module>
         <module>player_2</module>
-        <module>player_3</module>
         <module>common</module>
+        <module>player3</module>
     </modules>
 
 

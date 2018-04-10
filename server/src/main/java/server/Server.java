@@ -15,6 +15,7 @@ import java.util.Map;
 
 public class Server extends UnicastRemoteObject implements ServerInterface
 {
+
     private HashMap<String, ConnectedCommander> commanders;
     private HashMap<String, ConnectedPlayer> players;
 
@@ -23,8 +24,6 @@ public class Server extends UnicastRemoteObject implements ServerInterface
         players = new HashMap<>();
         commanders = new HashMap<>();
     }
-
-    //<editor-fold desc="rmi">
 
     @Override
     public void registerPlayer(PlayerInterface connection, String type, String name, String commanderName) throws RemoteException
@@ -68,6 +67,17 @@ public class Server extends UnicastRemoteObject implements ServerInterface
     }
 
     @Override
+    public List<String> getListOfCommanders() throws RemoteException
+    {
+        List<String> commandersNames = new ArrayList<>();
+        for (Map.Entry<String, ConnectedCommander> entry : commanders.entrySet())
+        {
+            commandersNames.add(entry.getValue().getName());
+        }
+        return commandersNames;
+    }
+
+    @Override
     public void removeCommander(String name) throws RemoteException
     {
         System.out.println("Commander " + name + " has connected.");
@@ -92,7 +102,6 @@ public class Server extends UnicastRemoteObject implements ServerInterface
         }
     }
 
-    //</editor-fold>
 
     private List<String> createPlayersList()
     {
@@ -103,4 +112,12 @@ public class Server extends UnicastRemoteObject implements ServerInterface
         }
         return playerDisplayNames;
     }
+    public HashMap<String, ConnectedCommander> getCommanders() {
+        return commanders;
+    }
+
+    public HashMap<String, ConnectedPlayer> getPlayers() {
+        return players;
+    }
+
 }

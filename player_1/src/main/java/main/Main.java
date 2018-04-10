@@ -15,22 +15,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-                    /*
 
-        try {
-            setMainStage(primaryStage);
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/fxml/welcome.fxml"));
-            loader.load();
-            Parent root = loader.getRoot();
-            primaryStage.setScene(new Scene(root, 391, 222));
-            //primaryStage.getIcons().add(new Image("/images/phone.png"));
-            primaryStage.centerOnScreen();
-            primaryStage.show();
-        } catch (IOException ioEcx) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ioEcx);
-        }
-        */
 
             FXMLLoader loader = new FXMLLoader();
             try {

@@ -5,8 +5,6 @@ import common.PlayerInterface;
 public class ConnectedPlayer
 {
     private PlayerInterface connection;
-
-
     ConnectedCommander commander;
     private String type;
     private String name;

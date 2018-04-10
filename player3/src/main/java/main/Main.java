@@ -5,11 +5,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 public class Main extends Application {
     private static Stage mainStage;
+    public static String login;
+    public static String commander;
     @Override
     public void start(Stage primaryStage) {
         try {

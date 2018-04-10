@@ -1,32 +1,29 @@
 package controller;
 
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
+import common.ServerInterface;
 import javafx.fxml.Initializable;
 import main.Main;
-import player_fx_bean.PlayerBean;
+import player3.Player3;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Player1Controller implements Initializable {
+public class Player3Controller implements Initializable {
+    private Player3 player;
+    private ServerInterface server;
 
-    @FXML
-    PlayerBean playerBean;
+
     public void initialize(URL location, ResourceBundle resources) {
 
-        /*
+
         try
         {
-            player = new Player1(playerName, this, clientType);
+            player = new Player3(Main.login, this, "BattleCannon",Main.commander);
             server = player.getServer();
         } catch (Exception ex)
         {
             System.out.println(ex.getMessage());
         }
-        */
-    }
 
-    public void enterTheGame_onAction(ActionEvent actionEvent) {
     }
 }
