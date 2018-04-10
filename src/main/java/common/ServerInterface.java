@@ -5,7 +5,7 @@ import java.rmi.RemoteException;
 
 public interface ServerInterface extends Remote
 {
-    void registerPlayer(PlayerInterface player, String type, String name) throws RemoteException;
+    void registerPlayer(PlayerInterface player, String type, String name, CommanderInterface commander) throws RemoteException;
     void registerCommander(CommanderInterface commander, String name) throws RemoteException;
     void removePlayer(String name) throws RemoteException;
     void removeCommander(String name) throws RemoteException;
