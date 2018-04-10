@@ -8,395 +8,375 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
-<fx:root prefHeight="900.0" prefWidth="1600.0" type="javafx.scene.layout.VBox" xmlns:fx="http://javafx.com/fxml/1"
-         xmlns="http://javafx.com/javafx/9.0.1">
-<VBox prefHeight="459.0" prefWidth="718.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
-  <children>
-    <HBox alignment="CENTER" prefHeight="58.0" prefWidth="599.9998779296875">
-      <children>
-        <Label text="Panel Gracza: ">
-          <font>
-            <Font size="30.0" fx:id="x1" />
-          </font>
-        </Label>
-        <VBox alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="172.0">
-          <children>
-            <Label fx:id="labelPlayer" font="$x1" text="Label" />
-          </children>
-        </VBox>
-      </children>
-    </HBox>
-    <HBox alignment="CENTER" prefHeight="19.0" prefWidth="718.0">
-      <children>
-        <Label fx:id="labelCommanderCommand" text="treść polecenia" />
-      </children>
-    </HBox>
-    <HBox alignment="CENTER" prefHeight="75.0" prefWidth="718.0">
-      <children>
-        <TextArea fx:id="textAreaCommanderCommand" prefHeight="44.0" prefWidth="641.0" wrapText="true" />
-      </children>
-    </HBox>
-    <HBox alignment="CENTER" prefHeight="307.0" prefWidth="718.0">
-      <children>
-        <HBox>
-          <VBox prefHeight="307.0000999999975" prefWidth="396.0">
+
+<fx:root type="javafx.scene.layout.VBox" prefHeight="470.0" prefWidth="829.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <VBox prefHeight="459.0" prefWidth="718.0">
+    <children>
+      <HBox alignment="CENTER" prefHeight="58.0" prefWidth="599.9998779296875">
+        <children>
+          <Label text="Panel Gracza: ">
+            <font>
+              <Font size="30.0" fx:id="x1" />
+            </font>
+          </Label>
+          <VBox alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="172.0">
             <children>
-              <VBox fx:id="vBoxPlayer1" disable="true" maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="471.0" prefWidth="1000.0" visible="false" VBox.vgrow="ALWAYS">
-                <Label alignment="CENTER" prefHeight="25.0" prefWidth="2000.0" text="Przyrządy:">
-                  <font>
-                    <Font size="16.0" fx:id="x2" />
-                  </font>
-                  <textFill>
-                    <Color blue="0.596" green="0.529" red="0.149" fx:id="x5" />
-                  </textFill>
-                </Label>
-                <Region VBox.vgrow="ALWAYS" />
-                <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="254.0">
-                  <VBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
-                    <HBox.margin>
-                      <Insets />
-                    </HBox.margin>
-                    <Label fx:id="labelDevice1Player1_Name" font="$x2" prefHeight="25.0" text="Prędkość rakiety:" textFill="BLACK" />
-                    <TextField fx:id="textFieldDevice1Player1_Value" prefHeight="25.0" prefWidth="257.0">
-                      <VBox.margin>
-                        <Insets left="15.0" right="15.0" />
-                      </VBox.margin>
-                    </TextField>
-                    <HBox>
-                      <VBox.margin>
-                        <Insets left="15.0" />
-                      </VBox.margin>
-                    </HBox>
-                  </VBox>
-                </HBox>
-                <Region VBox.vgrow="ALWAYS" />
-                <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="254.0">
-                  <VBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
-                    <HBox.margin>
-                      <Insets top="8.0" />
-                    </HBox.margin>
-                    <Label fx:id="labelDevice2Player1_Name" font="$x2" prefHeight="25.0" text="Tryb spalania paliwa:" textFill="WHITE" />
-                    <HBox alignment="TOP_CENTER" maxHeight="25.0" minHeight="25.0" prefWidth="257.0" style="-fx-background-color: white; ">
-                      <VBox.margin>
-                        <Insets left="15.0" right="15.0" />
-                      </VBox.margin>
-                      <RadioButton fx:id="radioButtonDevice2Player1_Option1" minHeight="17.0" minWidth="56.0" mnemonicParsing="false" prefHeight="17.0" text="Najdłuższy czas spalania">
-                        <font>
-                          <Font name="System Bold" size="11.0" fx:id="x3" />
-                        </font>
-                        <HBox.margin>
-                          <Insets top="3.0" />
-                        </HBox.margin>
-                      </RadioButton>
-                      <RadioButton fx:id="radioButtonDevice2Player1_Option2" font="$x3" minHeight="17.0" minWidth="74.0" mnemonicParsing="false" prefHeight="17.0" text="Najwyższa wydajność przyrządów">
-                        <HBox.margin>
-                          <Insets left="10.0" top="3.0" />
-                        </HBox.margin>
-                      </RadioButton>
-                    </HBox>
-                    <HBox>
-                      <VBox.margin>
-                        <Insets left="15.0" />
-                      </VBox.margin>
-                    </HBox>
-                  </VBox>
-                </HBox>
-                <Region VBox.vgrow="ALWAYS" />
-                <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="254.0">
-                  <VBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
-                    <HBox.margin>
-                      <Insets top="8.0" />
-                    </HBox.margin>
-                    <Label fx:id="labelDevice3Player1_Name" font="$x2" prefHeight="25.0" text="Kąt natarcia:" textFill="BLACK" />
-                    <HBox>
-                      <VBox.margin>
-                        <Insets left="15.0" right="15.0" />
-                      </VBox.margin>
-                      <Label fx:id="lavelDevice3Player1_MinValue" font="$x2" prefHeight="25.0" text="-5°" textFill="WHITE">
-                        <HBox.margin>
-                          <Insets right="5.0" />
-                        </HBox.margin>
-                      </Label>
-                      <HBox alignment="TOP_CENTER" maxHeight="25.0" minHeight="25.0" prefWidth="257.0" HBox.hgrow="ALWAYS">
-                        <Slider fx:id="sliderDevice3Player1_Value" max="500.0" min="20.0" value="50.0" HBox.hgrow="ALWAYS">
-                          <HBox.margin>
-                            <Insets left="5.0" right="5.0" top="5.0" />
-                          </HBox.margin>
-                        </Slider>
-                      </HBox>
-                      <Label fx:id="lavelDevice3Player1_MaxValue" font="$x2" prefHeight="25.0" text="30°" textFill="WHITE">
-                        <HBox.margin>
-                          <Insets left="5.0" />
-                        </HBox.margin>
-                      </Label>
-                    </HBox>
-                    <HBox>
-                      <VBox.margin>
-                        <Insets left="15.0" />
-                      </VBox.margin>
-                    </HBox>
-                  </VBox>
-                </HBox>
-                <Region VBox.vgrow="ALWAYS" />
-                <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
-                </padding>
-                <VBox.margin>
-                  <Insets top="10.0" />
-                </VBox.margin>
-              </VBox>
-              <VBox fx:id="vBoxplayer2" disable="true" maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="471.0" prefWidth="1000.0" visible="false" VBox.vgrow="ALWAYS">
-                <Label alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" text="Przyrządy:" textFill="$x5" />
-                <Region VBox.vgrow="ALWAYS" />
-                <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="254.0">
-                  <VBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
-                    <HBox.margin>
-                      <Insets />
-                    </HBox.margin>
-                    <Label fx:id="labelDevice1Player2_Name" font="$x2" prefHeight="25.0" text="Temperatura spalania:" textFill="BLACK" />
-                    <TextField fx:id="textFieldDevice1Player2_Value" prefHeight="25.0" prefWidth="257.0">
-                      <VBox.margin>
-                        <Insets left="15.0" right="15.0" />
-                      </VBox.margin>
-                    </TextField>
-                    <HBox>
-                      <VBox.margin>
-                        <Insets left="15.0" />
-                      </VBox.margin>
-                    </HBox>
-                  </VBox>
-                </HBox>
-                <Region VBox.vgrow="ALWAYS" />
-                <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="1494.0" VBox.vgrow="ALWAYS">
-                  <VBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
-                    <HBox.margin>
-                      <Insets top="8.0" />
-                    </HBox.margin>
-                    <Label fx:id="labelDevice2Player1_Name1" font="$x2" prefHeight="25.0" text="Współczynnik spalania:" textFill="BLACK" />
-                    <HBox alignment="TOP_CENTER" minHeight="25.0" prefWidth="257.0">
-                      <padding>
-                        <Insets left="10.0" right="10.0" />
-                      </padding>
-                      <VBox.margin>
-                        <Insets left="15.0" right="15.0" />
-                      </VBox.margin>
-                      <VBox HBox.hgrow="ALWAYS">
-                        <HBox.margin>
-                          <Insets bottom="5.0" top="5.0" />
-                        </HBox.margin>
-                        <HBox>
-                          <Label fx:id="labelDevice2Player2_Parameter1_Name" prefHeight="25.0" text="Il. wentylatorów:">
-                            <font>
-                              <Font size="13.0" fx:id="x6" />
-                            </font>
-                            <HBox.margin>
-                              <Insets left="10.0" />
-                            </HBox.margin>
-                          </Label>
-                          <Label fx:id="labelDevice2Player2_Parameter1_Value" font="$x6" prefHeight="25.0" text="3">
-                            <HBox.margin>
-                              <Insets left="10.0" />
-                            </HBox.margin>
-                          </Label>
-                          <Region maxHeight="1.0" minHeight="1.0" prefHeight="200.0" HBox.hgrow="ALWAYS" />
-                          <Label fx:id="labelDevice2Player2_Parameter2_Name" font="$x6" prefHeight="25.0" text="Temp. silnika:" />
-                          <TextField fx:id="textFieldDevice2Player2_Parameter2_Value" editable="false" prefHeight="25.0" prefWidth="55.0" >
-                            <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                            </HBox.margin>
-                          </TextField>
-                        </HBox>
-                        <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
-                          <VBox.margin>
-                            <Insets />
-                          </VBox.margin>
-                          <Label fx:id="labelDevice2Player2_Parameter3_Name" font="$x6" prefHeight="25.0" text="Temp. spalania (iloraz powyższych):" />
-                          <Label fx:id="labelDevice2Player2_Parameter3_Value" font="$x6" prefHeight="25.0" text="12 °C">
-                            <HBox.margin>
-                              <Insets left="10.0" />
-                            </HBox.margin>
-                          </Label>
-                        </HBox>
-                      </VBox>
-                    </HBox>
-                    <HBox>
-                      <VBox.margin>
-                        <Insets left="15.0" />
-                      </VBox.margin>
-                    </HBox>
-                  </VBox>
-                </HBox>
-                <Region VBox.vgrow="ALWAYS" />
-                <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="254.0">
-                  <VBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
-                    <HBox.margin>
-                      <Insets top="8.0" />
-                    </HBox.margin>
-                    <Label fx:id="labelDevice3Player2_Name" font="$x2" prefHeight="25.0" text="Impuls jednostkowy:" textFill="BLACK" />
-                    <HBox>
-                      <VBox.margin>
-                        <Insets left="15.0" right="15.0" />
-                      </VBox.margin>
-                      <Label fx:id="lavelDevice3Player2_MinValue" font="$x2" prefHeight="25.0" text="180 s" textFill="WHITE">
-                        <HBox.margin>
-                          <Insets right="5.0" />
-                        </HBox.margin>
-                      </Label>
-                      <HBox alignment="TOP_CENTER" maxHeight="25.0" minHeight="25.0" prefWidth="257.0" HBox.hgrow="ALWAYS">
-                        <Slider fx:id="sliderDevice3Player2_Value" max="500.0" min="20.0" value="50.0" HBox.hgrow="ALWAYS">
-                          <HBox.margin>
-                            <Insets left="5.0" right="5.0" top="5.0" />
-                          </HBox.margin>
-                        </Slider>
-                      </HBox>
-                      <Label fx:id="lavelDevice3Player2_MaxValue" font="$x2" prefHeight="25.0" text="250 s" textFill="WHITE">
-                        <HBox.margin>
-                          <Insets left="5.0" />
-                        </HBox.margin>
-                      </Label>
-                    </HBox>
-                    <HBox>
-                      <VBox.margin>
-                        <Insets left="15.0" />
-                      </VBox.margin>
-                    </HBox>
-                  </VBox>
-                </HBox>
-                <Region VBox.vgrow="ALWAYS" />
-                <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
-                </padding>
-                <VBox.margin>
-                  <Insets top="10.0" />
-                </VBox.margin>
-              </VBox>
-              <VBox fx:id="vBoxPlayer3" prefHeight="471.0" prefWidth="1000.0">
-                <Label alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" text="Przyrządy:" textFill="$x5" />
-                <Region VBox.vgrow="ALWAYS" />
-                <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="254.0">
-                  <VBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
-                    <HBox.margin>
-                      <Insets />
-                    </HBox.margin>
-                    <Label fx:id="labelDevice1Player3_Name" font="$x2" prefHeight="25.0" text="Ilość pocisków w magazynku:" textFill="BLACK" />
-                    <TextField fx:id="textFieldDevice1Player3_Value" prefHeight="25.0" prefWidth="257.0">
-                      <VBox.margin>
-                        <Insets left="15.0" right="15.0" />
-                      </VBox.margin>
-                    </TextField>
-                    <HBox>
-                      <VBox.margin>
-                        <Insets left="15.0" />
-                      </VBox.margin>
-                    </HBox>
-                  </VBox>
-                </HBox>
-                <Region VBox.vgrow="ALWAYS" />
-                <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="1494.0" VBox.vgrow="ALWAYS">
-                  <VBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
-                    <HBox.margin>
-                      <Insets top="8.0" />
-                    </HBox.margin>
-                    <Label fx:id="labelDevice2Player3_Name" font="$x2" prefHeight="25.0" text="Rodzaj mechanizmu spustowego:" textFill="WHITE" />
-                    <HBox alignment="TOP_CENTER" maxHeight="25.0" minHeight="25.0" prefWidth="257.0">
-                      <VBox.margin>
-                        <Insets left="15.0" right="15.0" />
-                      </VBox.margin>
-                      <RadioButton fx:id="radioButtonDevice2Player3_Option1" font="$x3" minHeight="17.0" minWidth="56.0" mnemonicParsing="false" prefHeight="17.0" text="ogień seryjny">
-                        <HBox.margin>
-                          <Insets top="3.0" />
-                        </HBox.margin>
-                      </RadioButton>
-                      <RadioButton fx:id="radioButtonDevice2Player3_Option2" font="$x3" minHeight="17.0" minWidth="74.0" mnemonicParsing="false" prefHeight="17.0" text="ogień ponedynczy">
-                        <HBox.margin>
-                          <Insets left="10.0" top="3.0" />
-                        </HBox.margin>
-                      </RadioButton>
-                    </HBox>
-                    <HBox>
-                      <VBox.margin>
-                        <Insets left="15.0" />
-                      </VBox.margin>
-                    </HBox>
-                  </VBox>
-                </HBox>
-                <Region VBox.vgrow="ALWAYS" />
-                <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="254.0">
-                  <VBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
-                    <HBox.margin>
-                      <Insets top="8.0" />
-                    </HBox.margin>
-                    <Label fx:id="labelDevice3Player3_Name" font="$x2" prefHeight="25.0" text="Ładowanie pocisku:" textFill="#202020" />
-                    <Button fx:id="buttonDevice1Player3" mnemonicParsing="false" prefHeight="25.0" prefWidth="518.0" text="Załaduj pocisk" textFill="WHITE">
-                      <font>
-                        <Font name="System Bold" size="12.0" />
-                      </font>
-                      <VBox.margin>
-                        <Insets left="15.0" right="15.0" />
-                      </VBox.margin>
-                    </Button>
-                    <HBox>
-                      <VBox.margin>
-                        <Insets left="15.0" right="15.0" />
-                      </VBox.margin>
-                    </HBox>
-                    <HBox>
-                      <VBox.margin>
-                        <Insets left="15.0" />
-                      </VBox.margin>
-                    </HBox>
-                  </VBox>
-                </HBox>
-                <Region VBox.vgrow="ALWAYS" />
-                <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
-                </padding>
-              </VBox>
+              <Label fx:id="labelPlayer" font="$x1" text="Label" />
             </children>
           </VBox>
-        </HBox>
-        <VBox prefHeight="307.0" prefWidth="318.0">
-          <children>
-            <HBox prefHeight="24.0" prefWidth="307.0">
+        </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="19.0" prefWidth="718.0">
+        <children>
+          <Label fx:id="labelCommanderCommand" text="treść polecenia" />
+        </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="75.0" prefWidth="718.0">
+        <children>
+          <TextArea fx:id="textAreaCommanderCommand" prefHeight="44.0" prefWidth="641.0" wrapText="true" />
+        </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="307.0" prefWidth="718.0">
+        <children>
+          <HBox>
+            <VBox prefHeight="307.0000999999975" prefWidth="396.0">
               <children>
-                <Label alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="Ilość graczy:" textFill="BLACK" />
+                <VBox fx:id="vBoxPlayer1" disable="true" maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="471.0" prefWidth="1000.0" visible="false" VBox.vgrow="ALWAYS">
+                  <Label alignment="CENTER" prefHeight="25.0" prefWidth="2000.0" text="Przyrządy:">
+                    <font>
+                      <Font size="16.0" fx:id="x2" />
+                    </font>
+                    <textFill>
+                      <Color blue="0.596" green="0.529" red="0.149" fx:id="x5" />
+                    </textFill>
+                  </Label>
+                  <Region VBox.vgrow="ALWAYS" />
+                  <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="254.0">
+                    <VBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
+                      <HBox.margin>
+                        <Insets />
+                      </HBox.margin>
+                      <Label fx:id="labelDevice1Player1_Name" font="$x2" prefHeight="25.0" text="Prędkość rakiety:" textFill="BLACK" />
+                      <TextField fx:id="textFieldDevice1Player1_Value" prefHeight="25.0" prefWidth="257.0">
+                        <VBox.margin>
+                          <Insets left="15.0" right="15.0" />
+                        </VBox.margin>
+                      </TextField>
+                      <HBox>
+                        <VBox.margin>
+                          <Insets left="15.0" />
+                        </VBox.margin>
+                      </HBox>
+                    </VBox>
+                  </HBox>
+                  <Region VBox.vgrow="ALWAYS" />
+                  <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="254.0">
+                    <VBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
+                      <HBox.margin>
+                        <Insets top="8.0" />
+                      </HBox.margin>
+                      <Label fx:id="labelDevice2Player1_Name" font="$x2" prefHeight="25.0" text="Tryb spalania paliwa:" textFill="WHITE" />
+                      <HBox alignment="TOP_CENTER" maxHeight="25.0" minHeight="25.0" prefWidth="257.0" style="-fx-background-color: white; ">
+                        <VBox.margin>
+                          <Insets left="15.0" right="15.0" />
+                        </VBox.margin>
+                        <RadioButton fx:id="radioButtonDevice2Player1_Option1" minHeight="17.0" minWidth="56.0" mnemonicParsing="false" prefHeight="17.0" text="Najdłuższy czas spalania">
+                          <font>
+                            <Font name="System Bold" size="11.0" fx:id="x3" />
+                          </font>
+                          <HBox.margin>
+                            <Insets top="3.0" />
+                          </HBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="radioButtonDevice2Player1_Option2" font="$x3" minHeight="17.0" minWidth="74.0" mnemonicParsing="false" prefHeight="17.0" text="Najwyższa wydajność przyrządów">
+                          <HBox.margin>
+                            <Insets left="10.0" top="3.0" />
+                          </HBox.margin>
+                        </RadioButton>
+                      </HBox>
+                      <HBox>
+                        <VBox.margin>
+                          <Insets left="15.0" />
+                        </VBox.margin>
+                      </HBox>
+                    </VBox>
+                  </HBox>
+                  <Region VBox.vgrow="ALWAYS" />
+                  <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="254.0">
+                    <VBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
+                      <HBox.margin>
+                        <Insets top="8.0" />
+                      </HBox.margin>
+                      <Label fx:id="labelDevice3Player1_Name" font="$x2" prefHeight="25.0" text="Kąt skrętu:" textFill="BLACK" />
+                      <HBox>
+                        <VBox.margin>
+                          <Insets left="15.0" right="15.0" />
+                        </VBox.margin>
+                        <Label fx:id="lavelDevice3Player1_MinValue" font="$x2" prefHeight="25.0" text="-5°" textFill="WHITE">
+                          <HBox.margin>
+                            <Insets right="5.0" />
+                          </HBox.margin>
+                        </Label>
+                        <HBox alignment="TOP_CENTER" maxHeight="25.0" minHeight="25.0" prefWidth="257.0" HBox.hgrow="ALWAYS">
+                          <Slider fx:id="sliderDevice3Player1_Value" max="500.0" min="20.0" value="50.0" HBox.hgrow="ALWAYS">
+                            <HBox.margin>
+                              <Insets left="5.0" right="5.0" top="5.0" />
+                            </HBox.margin>
+                          </Slider>
+                        </HBox>
+                        <Label fx:id="lavelDevice3Player1_MaxValue" font="$x2" prefHeight="25.0" text="30°" textFill="WHITE">
+                          <HBox.margin>
+                            <Insets left="5.0" />
+                          </HBox.margin>
+                        </Label>
+                      </HBox>
+                      <HBox>
+                        <VBox.margin>
+                          <Insets left="15.0" />
+                        </VBox.margin>
+                      </HBox>
+                    </VBox>
+                  </HBox>
+                  <Region VBox.vgrow="ALWAYS" />
+                  <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                  </padding>
+                  <VBox.margin>
+                    <Insets top="10.0" />
+                  </VBox.margin>
+                </VBox>
+                <VBox fx:id="vBoxplayer2" disable="true" maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="471.0" prefWidth="1000.0" visible="false" VBox.vgrow="ALWAYS">
+                  <Label alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" text="Przyrządy:" textFill="$x5" />
+                  <Region VBox.vgrow="ALWAYS" />
+                  <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="254.0">
+                    <VBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
+                      <HBox.margin>
+                        <Insets />
+                      </HBox.margin>
+                      <Label fx:id="labelDevice1Player2_Name" font="$x2" prefHeight="25.0" text="Temperatura spalania:" textFill="BLACK" />
+                      <TextField fx:id="textFieldDevice1Player2_Value" prefHeight="25.0" prefWidth="257.0">
+                        <VBox.margin>
+                          <Insets left="15.0" right="15.0" />
+                        </VBox.margin>
+                      </TextField>
+                      <HBox>
+                        <VBox.margin>
+                          <Insets left="15.0" />
+                        </VBox.margin>
+                      </HBox>
+                    </VBox>
+                  </HBox>
+                  <Region VBox.vgrow="ALWAYS" />
+                  <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="1494.0" VBox.vgrow="ALWAYS">
+                    <VBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
+                      <HBox.margin>
+                        <Insets top="8.0" />
+                      </HBox.margin>
+                      <Label fx:id="labelDevice2Player1_Name1" font="$x2" prefHeight="25.0" text="ilość aktywnych promieni" textFill="BLACK" />
+                      <HBox alignment="TOP_CENTER" minHeight="25.0" prefWidth="257.0">
+                        <padding>
+                          <Insets left="10.0" right="10.0" />
+                        </padding>
+                        <VBox.margin>
+                          <Insets left="15.0" right="15.0" />
+                        </VBox.margin>
+                        <VBox HBox.hgrow="ALWAYS">
+                          <HBox.margin>
+                            <Insets bottom="5.0" top="5.0" />
+                          </HBox.margin>
+                          <HBox alignment="CENTER">
+                            <Region maxHeight="1.0" minHeight="1.0" prefHeight="200.0" HBox.hgrow="ALWAYS" />
+                            <TextField fx:id="textFieldDevice2Player2_Parameter2_Value" editable="false" prefHeight="25.0" prefWidth="326.0">
+                              <HBox.margin>
+                                <Insets left="10.0" right="10.0" />
+                              </HBox.margin>
+                            </TextField>
+                          </HBox>
+                          <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+                            <VBox.margin>
+                              <Insets />
+                            </VBox.margin>
+                          </HBox>
+                        </VBox>
+                      </HBox>
+                      <HBox>
+                        <VBox.margin>
+                          <Insets left="15.0" />
+                        </VBox.margin>
+                      </HBox>
+                    </VBox>
+                  </HBox>
+                  <Region VBox.vgrow="ALWAYS" />
+                  <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="254.0">
+                    <VBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
+                      <HBox.margin>
+                        <Insets top="8.0" />
+                      </HBox.margin>
+                      <Label fx:id="labelDevice3Player2_Name" font="$x2" prefHeight="25.0" text="impuls" textFill="BLACK" />
+                      <HBox>
+                        <VBox.margin>
+                          <Insets left="15.0" right="15.0" />
+                        </VBox.margin>
+                        <Label fx:id="lavelDevice3Player2_MinValue" font="$x2" prefHeight="25.0" text="180 s" textFill="WHITE">
+                          <HBox.margin>
+                            <Insets right="5.0" />
+                          </HBox.margin>
+                        </Label>
+                        <HBox alignment="TOP_CENTER" maxHeight="25.0" minHeight="25.0" prefWidth="257.0" HBox.hgrow="ALWAYS">
+                          <Slider fx:id="sliderDevice3Player2_Value" max="500.0" min="20.0" value="50.0" HBox.hgrow="ALWAYS">
+                            <HBox.margin>
+                              <Insets left="5.0" right="5.0" top="5.0" />
+                            </HBox.margin>
+                          </Slider>
+                        </HBox>
+                        <Label fx:id="lavelDevice3Player2_MaxValue" font="$x2" prefHeight="25.0" text="250 s" textFill="WHITE">
+                          <HBox.margin>
+                            <Insets left="5.0" />
+                          </HBox.margin>
+                        </Label>
+                      </HBox>
+                      <HBox>
+                        <VBox.margin>
+                          <Insets left="15.0" />
+                        </VBox.margin>
+                      </HBox>
+                    </VBox>
+                  </HBox>
+                  <Region VBox.vgrow="ALWAYS" />
+                  <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                  </padding>
+                  <VBox.margin>
+                    <Insets top="10.0" />
+                  </VBox.margin>
+                </VBox>
+                <VBox fx:id="vBoxPlayer3" disable="false" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="471.0" prefWidth="1000.0" visible="true">
+                  <Label alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" text="Przyrządy:" textFill="$x5" />
+                  <Region VBox.vgrow="ALWAYS" />
+                  <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="254.0">
+                    <VBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
+                      <HBox.margin>
+                        <Insets />
+                      </HBox.margin>
+                      <Label fx:id="labelDevice1Player3_Name" font="$x2" prefHeight="25.0" text="Ilość pocisków w magazynku:" textFill="BLACK" />
+                      <TextField fx:id="textFieldDevice1Player3_Value" prefHeight="25.0" prefWidth="257.0">
+                        <VBox.margin>
+                          <Insets left="15.0" right="15.0" />
+                        </VBox.margin>
+                      </TextField>
+                      <HBox>
+                        <VBox.margin>
+                          <Insets left="15.0" />
+                        </VBox.margin>
+                      </HBox>
+                    </VBox>
+                  </HBox>
+                  <Region VBox.vgrow="ALWAYS" />
+                  <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="1494.0" VBox.vgrow="ALWAYS">
+                    <VBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
+                      <HBox.margin>
+                        <Insets top="8.0" />
+                      </HBox.margin>
+                      <Label fx:id="labelDevice2Player3_Name" font="$x2" prefHeight="25.0" text="Rodzaj mechanizmu spustowego:" textFill="WHITE" />
+                      <HBox alignment="TOP_CENTER" maxHeight="25.0" minHeight="25.0" prefWidth="257.0">
+                        <VBox.margin>
+                          <Insets left="15.0" right="15.0" />
+                        </VBox.margin>
+                        <RadioButton fx:id="radioButtonDevice2Player3_Option1" font="$x3" minHeight="17.0" minWidth="56.0" mnemonicParsing="false" prefHeight="17.0" text="ogień seryjny">
+                          <HBox.margin>
+                            <Insets top="3.0" />
+                          </HBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="radioButtonDevice2Player3_Option2" font="$x3" minHeight="17.0" minWidth="74.0" mnemonicParsing="false" prefHeight="17.0" text="ogień ponedynczy">
+                          <HBox.margin>
+                            <Insets left="10.0" top="3.0" />
+                          </HBox.margin>
+                        </RadioButton>
+                      </HBox>
+                      <HBox>
+                        <VBox.margin>
+                          <Insets left="15.0" />
+                        </VBox.margin>
+                      </HBox>
+                    </VBox>
+                  </HBox>
+                  <Region VBox.vgrow="ALWAYS" />
+                  <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="254.0">
+                    <VBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
+                      <HBox.margin>
+                        <Insets top="8.0" />
+                      </HBox.margin>
+                      <Label fx:id="labelDevice3Player3_Name" font="$x2" prefHeight="25.0" text="Ładowanie pocisku:" textFill="#202020" />
+                      <Button fx:id="buttonDevice1Player3" mnemonicParsing="false" prefHeight="25.0" prefWidth="518.0" text="Załaduj pocisk" textFill="WHITE">
+                        <font>
+                          <Font name="System Bold" size="12.0" />
+                        </font>
+                        <VBox.margin>
+                          <Insets left="15.0" right="15.0" />
+                        </VBox.margin>
+                      </Button>
+                      <HBox>
+                        <VBox.margin>
+                          <Insets left="15.0" right="15.0" />
+                        </VBox.margin>
+                      </HBox>
+                      <HBox>
+                        <VBox.margin>
+                          <Insets left="15.0" />
+                        </VBox.margin>
+                      </HBox>
+                    </VBox>
+                  </HBox>
+                  <Region VBox.vgrow="ALWAYS" />
+                  <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                  </padding>
+                </VBox>
               </children>
-            </HBox>
-            <HBox prefHeight="24.0" prefWidth="307.0">
-              <children>
-                <Label fx:id="labelNumberOfPlayers" alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="4" textFill="BLACK" />
-              </children>
-            </HBox>
-            <Region prefHeight="29.0" prefWidth="318.0" />
-            <HBox prefHeight="24.0" prefWidth="307.0">
-              <children>
-                <Label alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="Kapitan:" textFill="BLACK" />
-              </children>
-            </HBox>
-            <HBox prefHeight="24.0" prefWidth="307.0">
-              <children>
-                <Label fx:id="labelCommander" alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="zdral" textFill="BLACK" />
-              </children>
-            </HBox>
-            <Region prefHeight="29.0" prefWidth="318.0" />
-            <Label alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="Czas do końca gry:" textFill="BLACK" />
-            <Label fx:id="labelTimeToTheEnd" alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="25" textFill="BLACK" />
-            <Region prefHeight="29.0" prefWidth="318.0" />
-            <HBox prefHeight="24.0" prefWidth="307.0">
-              <children>
-                <Label alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="Punkty:" textFill="BLACK" />
-              </children>
-            </HBox>
-            <HBox prefHeight="24.0" prefWidth="307.0">
-              <children>
-                <Label fx:id="labelPoints" alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="3" textFill="BLACK" />
-              </children>
-            </HBox>
-            <Region prefHeight="29.0" prefWidth="318.0" />
-          </children>
-        </VBox>
-      </children>
-    </HBox>
-  </children>
-</VBox>
+            </VBox>
+          </HBox>
+          <VBox prefHeight="307.0" prefWidth="318.0">
+            <children>
+              <HBox prefHeight="24.0" prefWidth="307.0">
+                <children>
+                  <Label alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="Ilość graczy:" textFill="BLACK" />
+                </children>
+              </HBox>
+              <HBox prefHeight="24.0" prefWidth="307.0">
+                <children>
+                  <Label fx:id="labelNumberOfPlayers" alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="4" textFill="BLACK" />
+                </children>
+              </HBox>
+              <Region prefHeight="29.0" prefWidth="318.0" />
+              <HBox prefHeight="24.0" prefWidth="307.0">
+                <children>
+                  <Label alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="Kapitan:" textFill="BLACK" />
+                </children>
+              </HBox>
+              <HBox prefHeight="24.0" prefWidth="307.0">
+                <children>
+                  <Label fx:id="labelCommander" alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="zdral" textFill="BLACK" />
+                </children>
+              </HBox>
+              <Region prefHeight="29.0" prefWidth="318.0" />
+              <Label alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="Czas do końca gry:" textFill="BLACK" />
+              <Label fx:id="labelTimeToTheEnd" alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="25" textFill="BLACK" />
+              <Region prefHeight="29.0" prefWidth="318.0" />
+              <HBox prefHeight="24.0" prefWidth="307.0">
+                <children>
+                  <Label alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="Punkty:" textFill="BLACK" />
+                </children>
+              </HBox>
+              <HBox prefHeight="24.0" prefWidth="307.0">
+                <children>
+                  <Label fx:id="labelPoints" alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="3" textFill="BLACK" />
+                </children>
+              </HBox>
+              <Region prefHeight="29.0" prefWidth="318.0" />
+            </children>
+          </VBox>
+        </children>
+      </HBox>
+    </children>
+  </VBox>
 </fx:root>
