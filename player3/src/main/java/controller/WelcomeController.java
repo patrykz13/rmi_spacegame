@@ -53,7 +53,7 @@ public class WelcomeController extends UnicastRemoteObject implements Initializa
             primaryStage.setTitle("Listen To Your Captain - ver. Client no. 1");
             primaryStage.setMinWidth(600);
             primaryStage.setMinHeight(900);
-            primaryStage.setScene(new Scene(parent, 1600, 900));
+            primaryStage.setScene(new Scene(parent, 829, 470));
             Stage stage = (Stage) textFieldLogin.getScene().getWindow();
             stage.hide();
             primaryStage.show();
