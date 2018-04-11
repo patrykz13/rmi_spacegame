@@ -14,7 +14,7 @@ public class ConnectedPlayer
         this.connection = connection;
         this.type = type;
         this.name = name;
-
+        this.commander=commander;
 
     }
 

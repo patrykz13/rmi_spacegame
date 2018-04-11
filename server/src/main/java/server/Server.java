@@ -35,7 +35,7 @@ public class Server extends UnicastRemoteObject implements ServerInterface
         players.put(name, player);
         if (connectedCommander != null)
         {
-            connectedCommander.getConnection().receivePlayerList(createPlayersList());
+            connectedCommander.getConnection().receivePlayerList(createPlayersList(connectedCommander.getName()));
         } else
         {
             System.out.println("Error, commander is null.");
@@ -60,7 +60,7 @@ public class Server extends UnicastRemoteObject implements ServerInterface
         players.remove(name);
         if (commander != null)
         {
-            commander.getConnection().receivePlayerList(createPlayersList());
+            commander.getConnection().receivePlayerList(createPlayersList(commander.getName()));
         } else
         {
             System.out.println("Error, commander is null.");
@@ -95,6 +95,7 @@ public class Server extends UnicastRemoteObject implements ServerInterface
     @Override
     public void sendPoints(String commanderName, Integer points) throws RemoteException
     {
+        System.out.println("DOWODCY:");
         for (Map.Entry<String, ConnectedPlayer> entry : players.entrySet())
         {
             if(entry.getValue().getCommander().getName().equals(commanderName))
@@ -125,12 +126,22 @@ public class Server extends UnicastRemoteObject implements ServerInterface
         }
     }
 
-    private List<String> createPlayersList()
+    @Override
+    public void broadcastCommand(String type, String message, String commanderName) throws RemoteException {
+        for (Map.Entry<String, ConnectedPlayer> entry : players.entrySet())
+        {
+            if (entry.getValue().getType().equals(type) &&entry.getValue().getCommander().getName().equals(commanderName))
+                entry.getValue().getConnection().receiveCommand(message);
+        }
+    }
+
+    private List<String> createPlayersList(String commanderName)
     {
         List<String> playerDisplayNames = new ArrayList<>();
         for (Map.Entry<String, ConnectedPlayer> entry : players.entrySet())
         {
-            playerDisplayNames.add(entry.getValue().getName() + " " + entry.getValue().getType());
+            if(entry.getValue().getCommander().getName().equals(commanderName))
+                playerDisplayNames.add(entry.getValue().getName() + " " + entry.getValue().getType());
         }
         return playerDisplayNames;
     }

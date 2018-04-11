@@ -4,6 +4,7 @@ import common.PlayerInterface;
 import common.ServerInterface;
 import common.SpaceCommand;
 import controller.MainController;
+import javafx.application.Platform;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;
@@ -59,18 +60,25 @@ public class Player1 extends UnicastRemoteObject implements PlayerInterface
         //controller.textField.setText(text);
         //controller.CurrentCommand = spaceCommand;
     }
-
-
-
+    @Override
     public void receiveCommand(String s) throws RemoteException {
         controller.getPlayerBean().setStringPropertyCaptainCommand(s);
         System.out.println(s);
     }
 
-    public void becomeKickout(Boolean aBoolean) throws RemoteException {
-        controller.getPlayerBean().setBooleanPropertyKickFromServer(aBoolean);
+    @Override
+    public void receivePoints(Integer integer) throws RemoteException {
+        System.out.println(integer);
+        Platform.runLater(()-> {
+            controller.getPlayerBean().setIntegerPropertyNumberOfPoints(integer);
+        });
     }
+    @Override
+    public void becomeKickout(Boolean aBoolean) throws RemoteException {
+        Platform.runLater(()-> {
+            controller.getPlayerBean().setBooleanPropertyKickFromServer(aBoolean);
 
-    //</editor-fold>
+        });
+    }
 
 }

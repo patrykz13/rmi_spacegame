@@ -3,14 +3,13 @@ package controller;
 import commander.Commander;
 import common.ServerInterface;
 import common.SpaceCommand;
+import javafx.beans.property.ReadOnlyStringWrapper;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import main.Main;
 
@@ -30,13 +29,19 @@ public class CommanderController implements Initializable {
     public TableColumn<String,String> tableColumnPlayerName;
     public Button buttonRefresh;
     public TextField textFieldPoints;
+    public Label labelCommander;
+    public TextField labelRoundTime;
     private Commander commander;
     private ServerInterface server;
     private ObservableList<String> players = FXCollections.observableArrayList();
 
-    Integer totalScore = 0;
+    private Integer totalScore;
     public void givePoints_onAction(ActionEvent actionEvent) {
         totalScore+=Integer.parseInt(textFieldPoints.getText());
+        System.out.println(totalScore);
+        System.out.println(Main.login);
+
+        sendPoints(Main.login,totalScore);
     }
 
     public void startRound_onAction(ActionEvent actionEvent) {
@@ -44,17 +49,31 @@ public class CommanderController implements Initializable {
         if (commander != null)
         {
             if (textFieldCockpit!=null)
-                broadcastCommand("kabina pilota", textFieldCockpit.getText());
+                broadcastCommand("kabina pilota", textFieldCockpit.getText(),Main.login);
             if (textFieldBattleCannon!=null)
-                broadcastCommand("Działko bojowe", textFieldBattleCannon.getText());
+                broadcastCommand("Działko bojowe", textFieldBattleCannon.getText(),Main.login);
             if (textFieldLaserGun!=null)
-                broadcastCommand("działko laserowe", textFieldLaserGun.getText());
+                broadcastCommand("działko laserowe", textFieldLaserGun.getText(),Main.login);
+            startRound(Integer.parseInt(labelRoundTime.getText()));
+        }
+
+    }
+
+    private void startRound(Integer roundTime) {
+        try
+        {
+            server.startRound(roundTime);
+        } catch (Exception ex)
+        {
+            System.out.println(ex.getMessage());
         }
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        labelCommander.setText(Main.login);
+        tableColumnPlayerName.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
+        totalScore=0;
         try
         {
             commander = new Commander(Main.login, this);
@@ -82,11 +101,11 @@ public class CommanderController implements Initializable {
         }
     }
 
-    private void broadcastCommand(String type, String message)
+    private void broadcastCommand(String type, String message,String commanderName)
     {
         try
         {
-            server.broadcastCommand(type, message);
+            server.broadcastCommand(type, message,commanderName);
         } catch (Exception ex)
         {
             System.out.println(ex.getMessage());
@@ -100,6 +119,7 @@ public class CommanderController implements Initializable {
             server.sendPoints(commanderName, points);
         } catch (Exception ex)
         {
+            System.out.println("kurwa");
             System.out.println(ex.getMessage());
         }
     }

@@ -39,8 +39,7 @@ public class ServerController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         tableColumnCommanderName.setCellValueFactory(new PropertyValueFactory<ConnectedCommander,String>("name"));
         tableColumnPlayerName.setCellValueFactory(new PropertyValueFactory<ConnectedPlayer,String>("name"));
-        tableColumnPlayerCommander.setCellValueFactory(new PropertyValueFactory<ConnectedPlayer,String>("s"));
-        //(cellData -> new SimpleStringProperty(cellData.getValue().getCommander().name))
+        tableColumnPlayerCommander.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCommander().getName()));        //
         tableViewCommander.setItems(commanders);
         tableViewPlayer.setItems(players);
     }

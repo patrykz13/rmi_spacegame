@@ -52,7 +52,7 @@ public class Player3 extends UnicastRemoteObject implements PlayerInterface
     {
 
     }
-
+    @Override
     public void receiveCommand(SpaceCommand spaceCommand) throws RemoteException
     {
         System.out.println("Received command " + spaceCommand.getType() + " " + spaceCommand.getParameters() + ".");
@@ -61,11 +61,19 @@ public class Player3 extends UnicastRemoteObject implements PlayerInterface
         //controller.CurrentCommand = spaceCommand;
     }
 
+    @Override
     public void receiveCommand(String s) throws RemoteException {
         controller.getPlayerBean().setStringPropertyCaptainCommand(s);
         System.out.println(s);
     }
 
+    @Override
+    public void receivePoints(Integer integer) throws RemoteException {
+        Platform.runLater(()-> {
+            controller.getPlayerBean().setIntegerPropertyNumberOfPoints(integer);
+        });
+    }
+    @Override
     public void becomeKickout(Boolean aBoolean) throws RemoteException {
         Platform.runLater(()-> {
             controller.getPlayerBean().setBooleanPropertyKickFromServer(aBoolean);
