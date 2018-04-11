@@ -80,5 +80,10 @@ public class Player3 extends UnicastRemoteObject implements PlayerInterface
 
         });
     }
+    @Override
+    public void startRound(Integer integer) throws RemoteException {
+        controller.startThread(integer);
+    }
+}
 
 }

@@ -5,7 +5,6 @@ import common.ServerInterface;
 import common.SpaceCommand;
 import controller.MainController;
 import javafx.application.Platform;
-
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
@@ -79,5 +78,10 @@ public class Player2 extends UnicastRemoteObject implements PlayerInterface
             controller.getPlayerBean().setBooleanPropertyKickFromServer(aBoolean);
 
         });
+    }
+
+    @Override
+    public void startRound(Integer integer) throws RemoteException {
+        controller.startThread(integer);
     }
 }
