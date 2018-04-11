@@ -56,6 +56,7 @@ public class MainController implements Initializable {
         time.setCycleCount(Timeline.INDEFINITE);
         time.getKeyFrames().add(frame);
         if(time!=null){
+            System.out.println("chuj");
             time.stop();
         }
         time.play();

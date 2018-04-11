@@ -62,7 +62,7 @@ public class CommanderController implements Initializable {
     private void startRound(Integer roundTime) {
         try
         {
-            server.startRound(roundTime);
+            server.startRound(roundTime,Main.login);
         } catch (Exception ex)
         {
             System.out.println(ex.getMessage());
