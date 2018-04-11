@@ -59,6 +59,7 @@ public class MainController implements Initializable{
                 seconds--;
                 playerBean.setIntegerPropertyTimeToEndOfRound(seconds);
                 if(seconds<=0){
+                    server.broadcastRoundAnswer("kurwa",Main.commander);
                     time.stop();
                 }
             }

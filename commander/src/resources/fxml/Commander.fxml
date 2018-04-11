@@ -88,7 +88,7 @@
         </VBox>
         <VBox prefHeight="270.0" prefWidth="260.0">
           <children>
-            <TextArea prefHeight="199.0" prefWidth="244.0" wrapText="true" />
+            <TextArea fx:id="textAreaAnswer" prefHeight="199.0" prefWidth="244.0" wrapText="true" />
             <HBox alignment="CENTER" prefHeight="22.0" prefWidth="269.9998779296875">
               <children>
                 <Label alignment="CENTER" prefWidth="146.0" text="czas rundy [s]" />

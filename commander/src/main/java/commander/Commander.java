@@ -60,6 +60,11 @@ public class Commander extends UnicastRemoteObject implements CommanderInterface
     }
 
     @Override
+    public void receivePlayersAnswer(String s) throws RemoteException {
+        controller.textAreaAnswer.appendText("\n"+s);
+    }
+
+    @Override
     public void receiveNumberOfPlayers(int i) throws RemoteException {
 
     }

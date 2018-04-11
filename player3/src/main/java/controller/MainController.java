@@ -54,7 +54,7 @@ public class MainController implements Initializable {
                 playerBean.setIntegerPropertyTimeToEndOfRound(seconds);
                 if(seconds<=0){
                     try {
-                        server.broadcastCommand(playerBean.labelDevice1Player3_Name.getText(),"chuj");
+                        server.broadcastRoundAnswer("kurwa",Main.commander);
                     } catch (RemoteException e) {
                         e.printStackTrace();
                     }

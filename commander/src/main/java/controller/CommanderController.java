@@ -32,6 +32,7 @@ public class CommanderController implements Initializable {
     public TextField textFieldPoints;
     public Label labelCommander;
     public TextField labelRoundTime;
+    public TextArea textAreaAnswer;
     private Commander commander;
     private ServerInterface server;
     private ObservableList<String> players = FXCollections.observableArrayList();
