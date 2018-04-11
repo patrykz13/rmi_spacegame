@@ -11,6 +11,7 @@ public interface PlayerInterface extends Remote
     void receivePoints(Integer points) throws RemoteException;
     void becomeKickout(Boolean kickout) throws RemoteException;
     void startRound(Integer seconds) throws RemoteException;
+    void lossConnectionWithServer() throws RemoteException;
 
 
 }
