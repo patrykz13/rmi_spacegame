@@ -66,7 +66,7 @@ public class Player2 extends UnicastRemoteObject implements PlayerInterface
     }
 
     public void becomeKickout(Boolean aBoolean) throws RemoteException {
-        controller.getPlayerBean().booleanPropertyKickFromServerProperty().setValue(aBoolean);
+        controller.getPlayerBean().setBooleanPropertyKickFromServer(aBoolean);
     }
     //</editor-fold>
 
