@@ -73,6 +73,15 @@ public class Player3 extends UnicastRemoteObject implements PlayerInterface
             controller.getPlayerBean().setIntegerPropertyNumberOfPoints(integer);
         });
     }
+
+    @Override
+    public void receiveNumberOfPlayers(Integer integer) throws RemoteException {
+        Platform.runLater(()-> {
+            controller.getPlayerBean().setIntegerPropertyNumberOfPlayers(integer);
+
+        });
+    }
+
     @Override
     public void becomeKickout(Boolean aBoolean) throws RemoteException {
         Platform.runLater(()-> {

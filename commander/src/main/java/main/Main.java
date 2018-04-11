@@ -33,8 +33,6 @@ public class Main extends Application
             primaryStage.setScene(new Scene(root, 391, 222));
             //primaryStage.getIcons().add(new Image("/images/phone.png"));
             primaryStage.centerOnScreen();
-
-
             primaryStage.show();
         } catch (IOException ioEcx) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ioEcx);

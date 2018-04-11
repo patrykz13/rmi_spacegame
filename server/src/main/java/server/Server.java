@@ -109,6 +109,16 @@ public class Server extends UnicastRemoteObject implements ServerInterface
     }
 
     @Override
+    public void broadcastNumberOfPlayers(String s) throws RemoteException {
+        Integer numberOfPlayers = commanders.get(s).getNumberOfPlayers();
+        for (Map.Entry<String, ConnectedPlayer> entry : players.entrySet())
+        {
+            if(entry.getValue().getCommander().getName().equals(s))
+                entry.getValue().getConnection().receiveNumberOfPlayers(numberOfPlayers);
+        }
+    }
+
+    @Override
     public void sendPoints(String commanderName, Integer points) throws RemoteException
     {
         System.out.println("DOWODCY:");

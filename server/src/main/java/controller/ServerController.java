@@ -1,12 +1,14 @@
 package controller;
 
 import common.SpaceCommand;
+import customBox.CustomMessageBox;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -33,10 +35,12 @@ public class ServerController implements Initializable {
     private TableColumn<ConnectedCommander, String> tableColumnCommanderName;
     private ObservableList<ConnectedCommander> commanders = FXCollections.observableArrayList();
     private ObservableList<ConnectedPlayer> players = FXCollections.observableArrayList();
+    public CustomMessageBox customMessageBox;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        customMessageBox=new CustomMessageBox();
         tableColumnCommanderName.setCellValueFactory(new PropertyValueFactory<ConnectedCommander,String>("name"));
         tableColumnPlayerName.setCellValueFactory(new PropertyValueFactory<ConnectedPlayer,String>("name"));
         tableColumnPlayerCommander.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCommander().getName()));        //
@@ -45,11 +49,22 @@ public class ServerController implements Initializable {
     }
 
     public void buttonKickPlayer_onAction(ActionEvent actionEvent) throws RemoteException {
+        if (tableViewPlayer.getSelectionModel().getSelectedItem() != null) {
+            ConnectedPlayer selectedPlayer = tableViewPlayer.getSelectionModel().getSelectedItem();
+            ss.removePlayer(selectedPlayer.getName());
+            players.remove(tableViewPlayer.getSelectionModel().getSelectedItem());
+            selectedPlayer.getConnection().becomeKickout(true);
+            selectedPlayer.getConnection().receiveCommand("\n zostałeś wykickowany :(");
+            // Main.playerObservableList.remove(selectedPlayer);
+        } else
+            customMessageBox.showMessageBox(Alert.AlertType.WARNING, "Ostrzeżenie",
+                    "Operacja wyrzucenia kapitana z serwera nie powiedzie się.",
+                    "Powód: nie zaznaczono kapitana.")
+                    .showAndWait();
+
         ConnectedPlayer c =  ss.getPlayers().get(tableViewPlayer.getSelectionModel().getSelectedItem().getName());
         System.out.println(c.getName());
-        players.remove(tableViewPlayer.getSelectionModel().getSelectedItem());
-        c.getConnection().becomeKickout(true);
-        c.getConnection().receiveCommand("\n zostałeś wykickowany :(");
+
         ss.removePlayer(c.getName());
 
         //refreshTables();
@@ -74,7 +89,16 @@ public class ServerController implements Initializable {
         }
     }
 
-    public void buttonKickCommander_onAction(ActionEvent actionEvent) {
+    public void buttonKickCommander_onAction(ActionEvent actionEvent) throws RemoteException {
+        if (tableViewCommander.getSelectionModel().getSelectedItem() != null) {
+            ConnectedCommander selectedCaptain = tableViewCommander.getSelectionModel().getSelectedItem();
+            ss.removeCommander(selectedCaptain.getName());
+            //  Main.captainObservableList.remove(selectedCaptain);
+        } else
+            customMessageBox.showMessageBox(Alert.AlertType.WARNING, "Ostrzeżenie",
+                    "Operacja wyrzucenia kapitana z serwera nie powiedzie się.",
+                    "Powód: nie zaznaczono kapitana.")
+                    .showAndWait();
         commanders.remove(tableViewCommander.getSelectionModel().getSelectedItem());
         ss.getCommanders().remove(tableViewCommander.getSelectionModel().getSelectedItem().getName());
         refreshTables();

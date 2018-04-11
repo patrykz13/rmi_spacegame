@@ -89,7 +89,13 @@ public class Player2 extends UnicastRemoteObject implements PlayerInterface
     public void lossConnectionWithServer() throws RemoteException {
         controller.exitFromApplication();
     }
+    @Override
+    public void receiveNumberOfPlayers(Integer integer) throws RemoteException {
+        Platform.runLater(()-> {
+            controller.getPlayerBean().setIntegerPropertyNumberOfPlayers(integer);
 
+        });
+    }
 
 
 }

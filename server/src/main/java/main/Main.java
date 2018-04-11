@@ -1,6 +1,7 @@
 package main;
 
 import controller.ServerController;
+import customBox.CustomMessageBox;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
