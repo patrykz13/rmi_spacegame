@@ -62,7 +62,11 @@ public class MainController implements Initializable{
                 playerBean.setIntegerPropertyTimeToEndOfRound(seconds);
                 if(seconds<=0){
                     try {
-                        server.broadcastRoundAnswer("kurwa",Main.commander);
+                        server.broadcastRoundAnswer("GRACZ "+Main.login+" - DZIAŁKO LASEROWE ODPOWIEDZIAŁ: \n"+
+                                        "Temperatura promienia  "+playerBean.textFieldDevice1Player2_Value.getText()+"\n"+
+                                        "Ilość aktywnych promieni: "+playerBean.textFieldDevice2Player2_Parameter2_Value.getText()+"\n"+
+                                        "Długość promienia: " + playerBean.getDoublePropertyImpulseValue()+"\n"
+                                ,Main.commander);
                     } catch (RemoteException e) {
                         e.printStackTrace();
                     }
