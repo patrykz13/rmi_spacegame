@@ -92,7 +92,7 @@ public class ServerController implements Initializable {
             int port = 1099;
             String url = "rmi://localhost/sserver";
             java.rmi.registry.LocateRegistry.createRegistry(port);
-            ss = new Server();
+            ss = new Server(this);
             Naming.rebind(url, ss);
             System.out.println("Server ready.");
         } catch (Exception ex)
