@@ -60,12 +60,15 @@ public class Player1 extends UnicastRemoteObject implements PlayerInterface
         //controller.CurrentCommand = spaceCommand;
     }
 
-    public void receiveCommand(String s) throws RemoteException {
 
+
+    public void receiveCommand(String s) throws RemoteException {
+        controller.getPlayerBean().setStringPropertyCaptainCommand(s);
+        System.out.println(s);
     }
 
     public void becomeKickout(Boolean aBoolean) throws RemoteException {
-
+        controller.getPlayerBean().booleanPropertyKickFromServerProperty().setValue(aBoolean);
     }
 
     //</editor-fold>

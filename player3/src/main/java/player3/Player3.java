@@ -63,12 +63,12 @@ public class Player3 extends UnicastRemoteObject implements PlayerInterface
     }
 
     public void receiveCommand(String s) throws RemoteException {
-        controller.getPlayerBean().textAreaCommanderCommand.setText(s);
+        controller.getPlayerBean().setStringPropertyCaptainCommand(s);
         System.out.println(s);
     }
 
     public void becomeKickout(Boolean aBoolean) throws RemoteException {
-        controller.getPlayerBean().booleanPropertyKickFromServerProperty().setValue(aBoolean);
+        controller.getPlayerBean().setBooleanPropertyKickFromServer(aBoolean);
     }
 
     //</editor-fold>

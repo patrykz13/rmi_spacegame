@@ -41,18 +41,12 @@ public class CommanderController implements Initializable {
 
         if (commander != null)
         {
-            if (textFieldCockpit!=null) {
-                List<Integer> parameters = new ArrayList<Integer>();
-            parameters.add(Integer.valueOf(textFieldCockpit.getText()));
-            broadcastCommand("kabina pilota", parameters);
-        }
-            List<Integer> parameters2 = new ArrayList<Integer>();
-            parameters2.add(Integer.valueOf(textFieldBattleCannon.getText()));
-            broadcastCommand("Działko bojowe", parameters2);
-
-            List<Integer> parameters3 = new ArrayList<Integer>();
-            parameters3.add(Integer.valueOf(textFieldLaserGun.getText()));
-            broadcastCommand("działko laserowe", parameters3);
+            if (textFieldCockpit!=null)
+                broadcastCommand("kabina pilota", textFieldCockpit.getText());
+            if (textFieldBattleCannon!=null)
+                broadcastCommand("Działko bojowe", textFieldBattleCannon.getText());
+            if (textFieldLaserGun!=null)
+                broadcastCommand("działko laserowe", textFieldLaserGun.getText());
         }
     }
 

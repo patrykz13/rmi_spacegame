@@ -61,7 +61,7 @@ public class Player2 extends UnicastRemoteObject implements PlayerInterface
     }
 
     public void receiveCommand(String s) throws RemoteException {
-        controller.getPlayerBean().textAreaCommanderCommand.setText(s);
+        controller.getPlayerBean().setStringPropertyCaptainCommand(s);
         System.out.println(s);
     }
 

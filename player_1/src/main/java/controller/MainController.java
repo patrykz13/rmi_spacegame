@@ -13,6 +13,8 @@ import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
 
+
+
     @FXML
     PlayerBean playerBean;
     private Player1 player;
@@ -35,5 +37,12 @@ public class MainController implements Initializable {
     }
 
     public void enterTheGame_onAction(ActionEvent actionEvent) {
+    }
+    public PlayerBean getPlayerBean() {
+        return playerBean;
+    }
+
+    public void setPlayerBean(PlayerBean playerBean) {
+        this.playerBean = playerBean;
     }
 }

@@ -106,7 +106,7 @@ public class Server extends UnicastRemoteObject implements ServerInterface
     @Override
     public void broadcastCommand(String type, String message) throws RemoteException
     {
-        System.out.println("Sending " + type + " command.");
+        System.out.println("Sending " + type + " command." + message);
         for (Map.Entry<String, ConnectedPlayer> entry : players.entrySet())
         {
             if (entry.getValue().getType().equals(type))
