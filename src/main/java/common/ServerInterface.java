@@ -11,7 +11,8 @@ public interface ServerInterface extends Remote
     void removePlayer(String name) throws RemoteException;
     void removeCommander(String name) throws RemoteException;
     void broadcastScore(int score) throws RemoteException;
-    void broadcastNumberOfPlayers(int numberOfPlayers,String commanderName) throws RemoteException;
+    void broadcastRoundAnswer(String answer) throws RemoteException;
+    void broadcastNumberOfPlayers(String commanderName) throws RemoteException;
     void broadcastCommand(SpaceCommand command) throws RemoteException;
     void broadcastCommand(String type, String message) throws RemoteException;
     void broadcastCommand(String type, String message, String commanderName) throws RemoteException;
