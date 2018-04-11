@@ -33,4 +33,10 @@ public class MainController implements Initializable {
         }
 
     }
+
+
+    public PlayerBean getPlayerBean() {
+        return playerBean;
+    }
+
 }

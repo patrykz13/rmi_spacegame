@@ -3,12 +3,15 @@ package controller;
 import commander.Commander;
 import common.ServerInterface;
 import common.SpaceCommand;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import main.Main;
 
 import java.net.URL;
@@ -23,11 +26,12 @@ public class CommanderController implements Initializable {
     public TextField textFieldCockpit;
     public TextField textFieldBattleCannon;
     public TextField textFieldLaserGun;
-    public TableView tableViewPlayer;
-    public TableColumn tableColumnPlayerName;
+    public TableView<String> tableViewPlayer;
+    public TableColumn<String,String> tableColumnPlayerName;
     public Button buttonRefresh;
     private Commander commander;
     private ServerInterface server;
+    private ObservableList<String> players = FXCollections.observableArrayList();
 
     Integer totalScore = 0;
     public void givePoints_onAction(ActionEvent actionEvent) {
@@ -37,17 +41,18 @@ public class CommanderController implements Initializable {
 
         if (commander != null)
         {
-            List<Integer> parameters = new ArrayList<Integer>();
+            if (textFieldCockpit!=null) {
+                List<Integer> parameters = new ArrayList<Integer>();
             parameters.add(Integer.valueOf(textFieldCockpit.getText()));
-            broadcastCommand("Cockpit", parameters);
-
+            broadcastCommand("kabina pilota", parameters);
+        }
             List<Integer> parameters2 = new ArrayList<Integer>();
             parameters2.add(Integer.valueOf(textFieldBattleCannon.getText()));
-            broadcastCommand("BattleCanon", parameters2);
+            broadcastCommand("Działko bojowe", parameters2);
 
             List<Integer> parameters3 = new ArrayList<Integer>();
             parameters3.add(Integer.valueOf(textFieldLaserGun.getText()));
-            broadcastCommand("LaserGun", parameters3);
+            broadcastCommand("działko laserowe", parameters3);
         }
     }
 
@@ -63,6 +68,8 @@ public class CommanderController implements Initializable {
             System.out.println(ex.getMessage());
         }
         totalScore = 0;
+        tableViewPlayer.setItems(players);
+
     }
 
     public void refresh_onAction(ActionEvent actionEvent) {
@@ -77,5 +84,22 @@ public class CommanderController implements Initializable {
         {
             System.out.println(ex.getMessage());
         }
+    }
+
+    private void broadcastCommand(String type, String message)
+    {
+        try
+        {
+            server.broadcastCommand(type, message);
+        } catch (Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public void updatePlayerList(List<String> list) {
+
+        players.clear();
+        players.setAll(list);
     }
 }

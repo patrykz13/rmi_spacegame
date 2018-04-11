@@ -13,6 +13,10 @@ import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
 
+    public PlayerBean getPlayerBean() {
+        return playerBean;
+    }
+
     @FXML
     PlayerBean playerBean;
     private Player2 player;

@@ -60,6 +60,14 @@ public class Player1 extends UnicastRemoteObject implements PlayerInterface
         //controller.CurrentCommand = spaceCommand;
     }
 
+    public void receiveCommand(String s) throws RemoteException {
+
+    }
+
+    public void becomeKickout(Boolean aBoolean) throws RemoteException {
+
+    }
+
     //</editor-fold>
 
 }

@@ -30,6 +30,7 @@ public class Server extends UnicastRemoteObject implements ServerInterface
     {
         System.out.println("Player " + name + type + " has connected.");
         ConnectedCommander connectedCommander = commanders.get(commanderName);
+        System.out.println(connectedCommander.name);
         ConnectedPlayer player = new ConnectedPlayer(connection, type, name,connectedCommander);
         players.put(name, player);
         if (connectedCommander != null)
@@ -97,11 +98,21 @@ public class Server extends UnicastRemoteObject implements ServerInterface
         System.out.println("Sending " + spaceCommand.getType() + " command.");
         for (Map.Entry<String, ConnectedPlayer> entry : players.entrySet())
         {
-            if (entry.getValue().getType() == spaceCommand.getType())
+            if (entry.getValue().getType().equals(spaceCommand.getType()))
                 entry.getValue().getConnection().receiveCommand(spaceCommand);
         }
     }
 
+    @Override
+    public void broadcastCommand(String type, String message) throws RemoteException
+    {
+        System.out.println("Sending " + type + " command.");
+        for (Map.Entry<String, ConnectedPlayer> entry : players.entrySet())
+        {
+            if (entry.getValue().getType().equals(type))
+                entry.getValue().getConnection().receiveCommand(message);
+        }
+    }
 
     private List<String> createPlayersList()
     {

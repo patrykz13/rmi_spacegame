@@ -63,7 +63,7 @@ public class Commander extends UnicastRemoteObject implements CommanderInterface
     public void receivePlayerList(List<String> list) throws RemoteException
     {
         System.out.println("receivePlayerList called.");
-        //controller.updatePlayerList(list);
+        controller.updatePlayerList(list);
     }
 
     @Override

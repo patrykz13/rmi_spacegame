@@ -45,15 +45,18 @@ public class ServerController implements Initializable {
         tableViewPlayer.setItems(players);
     }
 
-    public void buttonKickPlayer_onAction(ActionEvent actionEvent) {
+    public void buttonKickPlayer_onAction(ActionEvent actionEvent) throws RemoteException {
            // users.getUsers().get(PlayerList.getSelectedIndex()).sendOrder("---------------------------"+"\n");
             //users.getUsers().get(PlayerList.getSelectedIndex()).sendOrder("Zostałeś wyrzucony z gry"+"\n");
             //kapitan.setMsg("---------------------------"+"\n");
             //kapitan.setMsg("Gracz :"+users.getUsers().get(PlayerList.getSelectedIndex()).getName()+" został wyrzucony z gry"+"\n");
+        players.remove(tableViewPlayer.getSelectionModel().getSelectedItem());
+        ConnectedPlayer c =  ss.getPlayers().get(tableViewPlayer.getSelectionModel().getSelectedItem().getName());
+        c.getConnection().becomeKickout(true);
+        c.getConnection().receiveCommand("\n zostałeś wykickowany :(");
 
-            players.remove(tableViewPlayer.getSelectionModel().getSelectedItem());
-            ss.getPlayers().remove(tableViewPlayer.getSelectionModel().getSelectedItem().getName());
-            refreshTables();
+        ss.getPlayers().remove(tableViewPlayer.getSelectionModel().getSelectedItem().getName());
+        refreshTables();
     }
 
     public void buttonRefresh_onAction(ActionEvent actionEvent) {
