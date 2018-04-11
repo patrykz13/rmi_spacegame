@@ -239,9 +239,9 @@ public class PlayerBean extends VBox implements Serializable {
 
         booleanPropertyKickFromServer.addListener((o, oldVal, newVal) -> {
             if (!newVal)
-                stringPropertyGameStatus.setValue("Status aktywnej gry: połączono.");
+                setStringPropertyGameStatus("Status aktywnej gry: połączono.");
             else
-                stringPropertyGameStatus.setValue("Status aktywnej gry: zostałeś wyrzucony z gry.");
+                setStringPropertyGameStatus("Status aktywnej gry: zostałeś wyrzucony z gry.");
         });
 
         sliderDevice3Player1_Value.valueProperty().addListener((obs, oldval, newVal) ->
