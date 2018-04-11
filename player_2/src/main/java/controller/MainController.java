@@ -80,6 +80,11 @@ public class MainController implements Initializable{
     }
 
     public void exitFromApplication() {
+        try {
+            server.removePlayer(Main.login);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
         Platform.runLater(() -> {
             Main.server = null;
             playerBean.booleanPropertyKickFromServerProperty().setValue(true);

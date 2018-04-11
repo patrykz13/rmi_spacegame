@@ -85,6 +85,11 @@ public class MainController implements Initializable {
 
     public void exitFromApplication() {
         Platform.runLater(() -> {
+            try {
+                server.removePlayer(Main.login);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
             Main.server = null;
             playerBean.booleanPropertyKickFromServerProperty().setValue(true);
             customMessageBox.showMessageBox(Alert.AlertType.ERROR, "BŁĄD KRYTYCZNY",
