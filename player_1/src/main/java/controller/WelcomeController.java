@@ -41,7 +41,7 @@ public class WelcomeController extends UnicastRemoteObject implements Initializa
     public void enterTheGame_onAction(ActionEvent actionEvent) {
         Main.commander=comboBoxCommander.getSelectionModel().getSelectedItem().toString();
         Main.login=textFieldLogin.getText();
-
+        Main.server=server;
         FXMLLoader loader = new FXMLLoader();
         try {
             loader.setLocation(getClass().getClassLoader().getResource("fxml/main.fxml"));

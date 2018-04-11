@@ -1,12 +1,15 @@
 package controller;
 
 import common.ServerInterface;
+import customBox.CustomMessageBox;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.util.Duration;
 import main.Main;
 import player3.Player3;
@@ -23,9 +26,10 @@ public class MainController implements Initializable {
     private Player3 player;
     private ServerInterface server;
     private Integer seconds;
-
+    private CustomMessageBox customMessageBox;
     public void initialize(URL location, ResourceBundle resources) {
 
+        customMessageBox=new CustomMessageBox();
         playerBean.initPlayerAndCaptainNicknames(Main.login, Main.commander, "Działko bojowe");
 
         try
@@ -50,7 +54,7 @@ public class MainController implements Initializable {
                 playerBean.setIntegerPropertyTimeToEndOfRound(seconds);
                 if(seconds<=0){
                     try {
-                        server.broadcastCommand(playerBean.labelDevice1Player3_Name.getText()+playerBean.labelDevice2Player3_Name+_,Main.commander);
+                        server.broadcastCommand(playerBean.labelDevice1Player3_Name.getText(),"chuj");
                     } catch (RemoteException e) {
                         e.printStackTrace();
                     }
@@ -69,6 +73,16 @@ public class MainController implements Initializable {
 
     public PlayerBean getPlayerBean() {
         return playerBean;
+    }
+
+    public void exitFromApplication() {
+        Platform.runLater(() -> {
+            Main.server = null;
+            playerBean.booleanPropertyKickFromServerProperty().setValue(true);
+            customMessageBox.showMessageBox(Alert.AlertType.ERROR, "BŁĄD KRYTYCZNY",
+                    "Gra została przerwana.",
+                    "Powód: utracono połączenie z serwerem.").showAndWait();
+        });
     }
 
 }

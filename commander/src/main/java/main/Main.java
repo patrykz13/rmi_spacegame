@@ -1,5 +1,7 @@
 package main;
 
+import common.ServerInterface;
+import customBox.CustomMessageBox;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,9 +19,12 @@ public class Main extends Application
 
     private static Stage mainStage;
     public static String login;
+    public static ServerInterface server;
+    public static CustomMessageBox customMessageBox;
     @Override
     public void start(Stage primaryStage) {
         try {
+            customMessageBox = new CustomMessageBox();
             setMainStage(primaryStage);
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/fxml/welcome.fxml"));
@@ -36,7 +42,15 @@ public class Main extends Application
     }
 
     @Override
-    public void stop() {
+    public void stop(){
+        if (server != null) {
+            try {
+                server.removeCommander(login);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+
         System.exit(0);
     }
 

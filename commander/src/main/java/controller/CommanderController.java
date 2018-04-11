@@ -3,20 +3,21 @@ package controller;
 import commander.Commander;
 import common.ServerInterface;
 import common.SpaceCommand;
-import javafx.beans.property.ReadOnlyStringWrapper;
+import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import main.Main;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import static main.Main.customMessageBox;
 
 public class CommanderController implements Initializable {
 
@@ -78,6 +79,7 @@ public class CommanderController implements Initializable {
         {
             commander = new Commander(Main.login, this);
             server = commander.getServer();
+            Main.server=server;
         } catch (Exception ex)
         {
             System.out.println(ex.getMessage());
@@ -128,5 +130,15 @@ public class CommanderController implements Initializable {
 
         players.clear();
         players.setAll(list);
+    }
+
+    public void exitFromApplication() {
+        Platform.runLater(() -> {
+            Main.server = null;
+            //labelConnectionStatus.setText("Status połączenia: rozłączono z serwerem.");
+            customMessageBox.showMessageBox(Alert.AlertType.ERROR, "BŁĄD KRYTYCZNY",
+                    "Gra została przerwana.",
+                    "Powód: utracono połączenie z serwerem.").showAndWait();
+        });
     }
 }

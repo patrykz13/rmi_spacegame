@@ -84,4 +84,12 @@ public class Player2 extends UnicastRemoteObject implements PlayerInterface
     public void startRound(Integer integer) throws RemoteException {
         controller.startThread(integer);
     }
+
+    @Override
+    public void lossConnectionWithServer() throws RemoteException {
+        controller.exitFromApplication();
+    }
+
+
+
 }

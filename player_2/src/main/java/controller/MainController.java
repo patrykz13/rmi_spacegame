@@ -1,6 +1,7 @@
 package controller;
 
 import common.ServerInterface;
+import customBox.CustomMessageBox;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
@@ -8,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import main.Main;
 import player2.Player2;
 import player_fx_bean.PlayerBean;
@@ -29,10 +31,10 @@ public class MainController implements Initializable{
     private Player2 player;
     private ServerInterface server;
     private Integer seconds=0;
-
+    private CustomMessageBox customMessageBox;
 
     public void initialize(URL location, ResourceBundle resources) {
-
+        customMessageBox=new CustomMessageBox();
         playerBean.initPlayerAndCaptainNicknames(Main.login, Main.commander, "działko laserowe");
 
         try
@@ -68,6 +70,16 @@ public class MainController implements Initializable{
             time.stop();
         }
         time.play();
+    }
+
+    public void exitFromApplication() {
+        Platform.runLater(() -> {
+            Main.server = null;
+            playerBean.booleanPropertyKickFromServerProperty().setValue(true);
+            customMessageBox.showMessageBox(Alert.AlertType.ERROR, "BŁĄD KRYTYCZNY",
+                    "Gra została przerwana.",
+                    "Powód: utracono połączenie z serwerem.").showAndWait();
+        });
     }
 }
 

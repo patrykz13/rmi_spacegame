@@ -72,6 +72,10 @@ public class Commander extends UnicastRemoteObject implements CommanderInterface
 
     }
 
+    @Override
+    public void lossConnectionWithServer() throws RemoteException {
+        controller.exitFromApplication();
+    }
 
 
     //</editor-fold>

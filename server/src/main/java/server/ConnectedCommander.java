@@ -35,7 +35,11 @@ public class ConnectedCommander
         this.name = name;
     }
 
-    public void decrementNumberOfPlayers() {
+    public void incrementNumberOfPlayers(){
+        numberOfPlayers++;
+    }
 
+    public void decrementNumberOfPlayers(){
+        numberOfPlayers--;
     }
 }
