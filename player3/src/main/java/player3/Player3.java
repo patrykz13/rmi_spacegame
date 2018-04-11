@@ -5,6 +5,7 @@ import common.PlayerInterface;
 import common.ServerInterface;
 import common.SpaceCommand;
 import controller.MainController;
+import javafx.application.Platform;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;
@@ -46,8 +47,6 @@ public class Player3 extends UnicastRemoteObject implements PlayerInterface
         return server;
     }
 
-    //<editor-fold desc="rmi">
-
 
     public void confirmConnection(String s) throws RemoteException
     {
@@ -68,9 +67,10 @@ public class Player3 extends UnicastRemoteObject implements PlayerInterface
     }
 
     public void becomeKickout(Boolean aBoolean) throws RemoteException {
-        controller.getPlayerBean().setBooleanPropertyKickFromServer(aBoolean);
-    }
+        Platform.runLater(()-> {
+            controller.getPlayerBean().setBooleanPropertyKickFromServer(aBoolean);
 
-    //</editor-fold>
+        });
+    }
 
 }

@@ -75,7 +75,7 @@
             <HBox alignment="CENTER" prefHeight="27.0" prefWidth="270.0000999999975">
               <children>
                 <Label text="" />
-                <TextField prefWidth="200.0" />
+                <TextField fx:id="textFieldPoints" prefWidth="200.0" />
               </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="27.0" prefWidth="315.0">

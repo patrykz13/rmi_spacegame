@@ -29,12 +29,14 @@ public class CommanderController implements Initializable {
     public TableView<String> tableViewPlayer;
     public TableColumn<String,String> tableColumnPlayerName;
     public Button buttonRefresh;
+    public TextField textFieldPoints;
     private Commander commander;
     private ServerInterface server;
     private ObservableList<String> players = FXCollections.observableArrayList();
 
     Integer totalScore = 0;
     public void givePoints_onAction(ActionEvent actionEvent) {
+        totalScore+=Integer.parseInt(textFieldPoints.getText());
     }
 
     public void startRound_onAction(ActionEvent actionEvent) {
@@ -85,6 +87,17 @@ public class CommanderController implements Initializable {
         try
         {
             server.broadcastCommand(type, message);
+        } catch (Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    private void sendPoints(String commanderName, Integer points)
+    {
+        try
+        {
+            server.sendPoints(commanderName, points);
         } catch (Exception ex)
         {
             System.out.println(ex.getMessage());
