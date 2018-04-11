@@ -15,6 +15,7 @@ public class Main extends Application {
     public static String login;
     public static String commander;
 
+
     @Override
     public void start(Stage primaryStage) {
 

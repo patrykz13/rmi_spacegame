@@ -101,4 +101,14 @@ public class ServerController implements Initializable {
             System.out.println(ex.getMessage());
         }
     }
+
+    public void refreshCaptainsList() throws RemoteException {
+        commanders.clear();
+        commanders.addAll(ss.getCommanders().values());
+    }
+
+    public void refreshPlayersList(){
+        players.clear();
+        players.addAll(ss.getPlayers().values());
+    }
 }

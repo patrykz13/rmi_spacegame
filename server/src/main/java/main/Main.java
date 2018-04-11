@@ -1,5 +1,6 @@
 package main;
 
+import controller.ServerController;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +17,7 @@ public class Main extends Application
 
     private static Stage mainStage;
     public static String login;
+    public static ServerController serverController;
     @Override
     public void start(Stage primaryStage) {
         try {

@@ -7,6 +7,7 @@ public class ConnectedCommander
 {
     private CommanderInterface connection;
     public String name;
+    private Integer numberOfPlayers = 0;
 
     public ConnectedCommander(CommanderInterface connection, String name)
     {
@@ -32,5 +33,9 @@ public class ConnectedCommander
     public void setName(String name)
     {
         this.name = name;
+    }
+
+    public void decrementNumberOfPlayers() {
+
     }
 }

@@ -13,6 +13,7 @@ import player3.Player3;
 import player_fx_bean.PlayerBean;
 
 import java.net.URL;
+import java.rmi.RemoteException;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
@@ -48,6 +49,11 @@ public class MainController implements Initializable {
                 seconds--;
                 playerBean.setIntegerPropertyTimeToEndOfRound(seconds);
                 if(seconds<=0){
+                    try {
+                        server.broadcastCommand(playerBean.labelDevice1Player3_Name.getText()+playerBean.labelDevice2Player3_Name+_,Main.commander);
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
                     time.stop();
                 }
             }
@@ -56,7 +62,6 @@ public class MainController implements Initializable {
         time.setCycleCount(Timeline.INDEFINITE);
         time.getKeyFrames().add(frame);
         if(time!=null){
-            System.out.println("chuj");
             time.stop();
         }
         time.play();
