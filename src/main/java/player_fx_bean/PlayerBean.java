@@ -14,6 +14,10 @@ import java.util.Random;
 public class PlayerBean extends VBox implements Serializable {
 
     private final StringProperty stringPropertyPanelName = new SimpleStringProperty("");
+    private final StringProperty stringPropertyGameStatus = new SimpleStringProperty("");
+
+
+
     private final IntegerProperty integerPropertyNumberOfPoints = new SimpleIntegerProperty(0);
     private final IntegerProperty integerPropertyNumberOfPlayers = new SimpleIntegerProperty(0);
     private final IntegerProperty integerPropertyTimeToEndOfRound = new SimpleIntegerProperty(0);
@@ -210,6 +214,7 @@ public class PlayerBean extends VBox implements Serializable {
         labelTimeToTheEnd.textProperty().bind(integerPropertyTimeToEndOfRound.asString());
         textAreaCommanderCommand.textProperty().bind(stringPropertyCaptainCommand);
         labelCommander.textProperty().bind(stringPropertyCaptainNickname);
+        labelGameStatus.textProperty().bind(stringPropertyGameStatus);
 
         // Gracz 1:
         fuelCombustionMode_1.bind(radioButtonDevice2Player1_Option1.selectedProperty());
@@ -234,9 +239,9 @@ public class PlayerBean extends VBox implements Serializable {
 
         booleanPropertyKickFromServer.addListener((o, oldVal, newVal) -> {
             if (!newVal)
-                labelGameStatus.setText("Status aktywnej gry: połączono.");
+                stringPropertyGameStatus.setValue("Status aktywnej gry: połączono.");
             else
-                labelGameStatus.setText("Status aktywnej gry: zostałeś wyrzucony z gry.");
+                stringPropertyGameStatus.setValue("Status aktywnej gry: zostałeś wyrzucony z gry.");
         });
 
         sliderDevice3Player1_Value.valueProperty().addListener((obs, oldval, newVal) ->
@@ -456,6 +461,42 @@ public class PlayerBean extends VBox implements Serializable {
 
     public void setBooleanPropertyLoadBullet(boolean booleanPropertyLoadBullet) {
         this.booleanPropertyLoadBullet.set(booleanPropertyLoadBullet);
+    }
+
+    public String getStringPropertyGameStatus() {
+        return stringPropertyGameStatus.get();
+    }
+
+    public StringProperty stringPropertyGameStatusProperty() {
+        return stringPropertyGameStatus;
+    }
+
+    public void setStringPropertyGameStatus(String stringPropertyGameStatus) {
+        this.stringPropertyGameStatus.set(stringPropertyGameStatus);
+    }
+
+    public double getDoublePropertyImpulseValue() {
+        return doublePropertyImpulseValue.get();
+    }
+
+    public DoubleProperty doublePropertyImpulseValueProperty() {
+        return doublePropertyImpulseValue;
+    }
+
+    public void setDoublePropertyImpulseValue(double doublePropertyImpulseValue) {
+        this.doublePropertyImpulseValue.set(doublePropertyImpulseValue);
+    }
+
+    public double getDoublePropertyTurnValue() {
+        return doublePropertyTurnValue.get();
+    }
+
+    public DoubleProperty doublePropertyTurnValueProperty() {
+        return doublePropertyTurnValue;
+    }
+
+    public void setDoublePropertyTurnValue(double doublePropertyTurnValue) {
+        this.doublePropertyTurnValue.set(doublePropertyTurnValue);
     }
 
 
