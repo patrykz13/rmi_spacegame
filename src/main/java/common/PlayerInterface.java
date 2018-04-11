@@ -10,6 +10,7 @@ public interface PlayerInterface extends Remote
     void receiveCommand(String command) throws RemoteException;
     void receivePoints(Integer points) throws RemoteException;
     void becomeKickout(Boolean kickout) throws RemoteException;
+    void startRound(Integer seconds) throws RemoteException;
 
 
 }

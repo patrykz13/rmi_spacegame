@@ -15,6 +15,7 @@ public interface ServerInterface extends Remote
     void broadcastCommand(String type, String message) throws RemoteException;
     void broadcastCommand(String type, String message, String commanderName) throws RemoteException;
     void sendPoints(String commanderName, Integer points) throws RemoteException;
+    void startRound(Integer seconds) throws RemoteException;
 
 
     List<String> getListOfCommanders() throws RemoteException;
