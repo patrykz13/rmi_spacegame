@@ -109,6 +109,11 @@ public class Server extends UnicastRemoteObject implements ServerInterface
     }
 
     @Override
+    public void broadcastRoundAnswer(String answer, String commanderName) throws RemoteException {
+        commanders.get(commanderName).getConnection().receivePlayersAnswer(answer);
+    }
+
+    @Override
     public void broadcastNumberOfPlayers(String s) throws RemoteException {
         Integer numberOfPlayers = commanders.get(s).getNumberOfPlayers();
         for (Map.Entry<String, ConnectedPlayer> entry : players.entrySet())

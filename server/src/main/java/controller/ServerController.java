@@ -93,14 +93,15 @@ public class ServerController implements Initializable {
         if (tableViewCommander.getSelectionModel().getSelectedItem() != null) {
             ConnectedCommander selectedCaptain = tableViewCommander.getSelectionModel().getSelectedItem();
             ss.removeCommander(selectedCaptain.getName());
+            commanders.remove(tableViewCommander.getSelectionModel().getSelectedItem());
+            selectedCaptain.getConnection().receivePlayersAnswer("\n zostałeś wykickowany :(");
+
             //  Main.captainObservableList.remove(selectedCaptain);
         } else
             customMessageBox.showMessageBox(Alert.AlertType.WARNING, "Ostrzeżenie",
                     "Operacja wyrzucenia kapitana z serwera nie powiedzie się.",
                     "Powód: nie zaznaczono kapitana.")
                     .showAndWait();
-        commanders.remove(tableViewCommander.getSelectionModel().getSelectedItem());
-        ss.getCommanders().remove(tableViewCommander.getSelectionModel().getSelectedItem().getName());
         refreshTables();
     }
 

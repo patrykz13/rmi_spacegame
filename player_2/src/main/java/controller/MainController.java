@@ -17,6 +17,8 @@ import java.lang.Thread;
 
 import java.net.URL;
 import javafx.util.Duration;
+
+import java.rmi.RemoteException;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -59,7 +61,11 @@ public class MainController implements Initializable{
                 seconds--;
                 playerBean.setIntegerPropertyTimeToEndOfRound(seconds);
                 if(seconds<=0){
-                    server.broadcastRoundAnswer("kurwa",Main.commander);
+                    try {
+                        server.broadcastRoundAnswer("kurwa",Main.commander);
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
                     time.stop();
                 }
             }

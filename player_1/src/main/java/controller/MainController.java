@@ -16,6 +16,7 @@ import player1.Player1;
 import player_fx_bean.PlayerBean;
 
 import java.net.URL;
+import java.rmi.RemoteException;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
@@ -54,7 +55,11 @@ public class MainController implements Initializable {
                 seconds--;
                 playerBean.setIntegerPropertyTimeToEndOfRound(seconds);
                 if(seconds<=0){
-                    server.broadcastRoundAnswer("kurwa",Main.commander);
+                    try {
+                        server.broadcastRoundAnswer("kurwa",Main.commander);
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
                     time.stop();
                 }
             }
