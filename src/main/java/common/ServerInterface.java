@@ -13,6 +13,10 @@ public interface ServerInterface extends Remote
     void broadcastScore(int score) throws RemoteException;
     void broadcastCommand(SpaceCommand command) throws RemoteException;
     void broadcastCommand(String type, String message) throws RemoteException;
+    void broadcastCommand(String type, String message, String commanderName) throws RemoteException;
+    void sendPoints(String commanderName, Integer points) throws RemoteException;
+
+
     List<String> getListOfCommanders() throws RemoteException;
 
 }
