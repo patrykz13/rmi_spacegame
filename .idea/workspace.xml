@@ -12,12 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="edc3940a-4697-4796-ab47-2a102535d36b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player3/src/main/java/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/player3/src/main/java/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player3/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/player3/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/controller/ServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/controller/ServerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/ConnectedCommander.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/ConnectedCommander.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player_1/src/main/java/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/player_1/src/main/java/controller/MainController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,13 +30,32 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <file leaf-file-name="PlayerBean.class" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/target/classes/player_fx_bean/PlayerBean.class">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="2879">
+                    <caret line="459" column="40" selection-start-line="459" selection-start-column="20" selection-end-line="459" selection-end-column="40" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Player3.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/player3/src/main/java/player3/Player3.java">
+      <file leaf-file-name="WelcomeController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/player_1/src/main/java/controller/WelcomeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state relative-caret-position="522">
+              <caret line="52" column="51" selection-start-line="52" selection-start-column="51" selection-end-line="52" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/player3/src/main/java/main/Main.java">
+      <file leaf-file-name="Player3.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/player3/src/main/java/player3/Player3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="90">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -61,8 +75,8 @@
       <file leaf-file-name="WelcomeController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/player3/src/main/java/controller/WelcomeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+            <state relative-caret-position="522">
+              <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -70,8 +84,17 @@
       <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/player3/src/main/java/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
+            <state relative-caret-position="72">
+              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/player_2/src/main/java/main/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,64 +102,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/server/Server.java">
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/player_2/src/main/java/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1984">
-              <caret line="186" column="44" selection-start-line="186" selection-start-column="44" selection-end-line="186" selection-end-column="44" />
+            <state relative-caret-position="810">
+              <caret line="67" column="111" selection-start-line="64" selection-start-column="24" selection-end-line="67" selection-end-column="111" />
               <folding>
-                <element signature="e#5759#5760#0" expanded="true" />
-                <element signature="e#5789#5790#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServerController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/controller/ServerController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="111" column="15" selection-start-line="111" selection-start-column="15" selection-end-line="111" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/main/Main.java">
+        <entry file="file://$PROJECT_DIR$/player_1/src/main/java/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+            <state relative-caret-position="306">
+              <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConnectedCommander.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/server/ConnectedCommander.java">
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/player_1/src/main/java/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConnectedPlayer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/server/ConnectedPlayer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+            <state relative-caret-position="270">
+              <caret line="67" column="110" selection-start-line="67" selection-start-column="110" selection-end-line="67" selection-end-column="110" />
               <folding>
-                <element signature="e#509#510#0" expanded="true" />
-                <element signature="e#542#543#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerBean.class" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/target/classes/player_fx_bean/PlayerBean.class">
+      <file leaf-file-name="WelcomeController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/player_2/src/main/java/controller/WelcomeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="263" column="42" selection-start-line="263" selection-start-column="13" selection-end-line="263" selection-end-column="42" />
+            <state relative-caret-position="540">
+              <caret line="53" column="57" selection-start-line="53" selection-end-line="54" />
             </state>
           </provider>
         </entry>
@@ -163,6 +166,8 @@
       <find>labelDevice1Player1_Name</find>
       <find>textFieldDevice1Player2_Value</find>
       <find>textFieldDevice1Player3_Value</find>
+      <find>toggleGroupDevice2Player1</find>
+      <find>fuelCombustionMode_1</find>
     </findStrings>
     <replaceStrings>
       <replace>fx:id</replace>
@@ -218,7 +223,6 @@
         <option value="$PROJECT_DIR$/player_2/src/main/java/player2/Player2.java" />
         <option value="$PROJECT_DIR$/player_2/src/main/java/controller/MainController.java" />
         <option value="$PROJECT_DIR$/player_1/src/main/java/player1/Player1.java" />
-        <option value="$PROJECT_DIR$/player_1/src/main/java/controller/MainController.java" />
         <option value="$PROJECT_DIR$/player3/src/main/java/player3/Player3.java" />
         <option value="$PROJECT_DIR$/commander/src/main/java/controller/CommanderController.java" />
         <option value="$PROJECT_DIR$/player3/src/main/resources/fxml/main.fxml" />
@@ -230,6 +234,7 @@
         <option value="$PROJECT_DIR$/server/src/main/java/main/Main.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/server/Server.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/controller/ServerController.java" />
+        <option value="$PROJECT_DIR$/player_1/src/main/java/controller/MainController.java" />
       </list>
     </option>
   </component>
@@ -276,7 +281,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -332,6 +337,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rmi_spaceteam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rmi_spaceteam" type="462c0819:PsiDirectoryNode" />
+              <item name="commander" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="customBox" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="rmi_spaceteam" type="b2602c69:ProjectViewProjectNode" />
@@ -396,6 +410,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rmi_spaceteam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rmi_spaceteam" type="462c0819:PsiDirectoryNode" />
+              <item name="player3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="customBox" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="rmi_spaceteam" type="b2602c69:ProjectViewProjectNode" />
@@ -549,6 +572,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="customBox" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rmi_spaceteam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rmi_spaceteam" type="462c0819:PsiDirectoryNode" />
+              <item name="player_2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -609,6 +641,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rmi_spaceteam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rmi_spaceteam" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="customBox" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="rmi_spaceteam" type="b2602c69:ProjectViewProjectNode" />
@@ -689,8 +730,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -737,12 +778,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main (5)">
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="rmi_spaceteam" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    </configuration>
+  <component name="RunManager" selected="Application.Main (2)">
     <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="player_1" />
@@ -757,6 +793,17 @@
     <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="commander" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="Main (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
+      <module name="player_2" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -843,15 +890,15 @@
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Main (5)" />
       <item itemvalue="Application.Main (2)" />
-      <item itemvalue="Application.Main (1)" />
+      <item itemvalue="Application.Main (4)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main (5)" />
+        <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Main (3)" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.Main (2)" />
+        <item itemvalue="Application.Main (4)" />
+        <item itemvalue="Application.Main (5)" />
       </list>
     </recent_temporary>
   </component>
@@ -1001,38 +1048,58 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73069000" />
+    <option name="totallyTimeSpent" value="73604000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <frame x="67" y="25" width="1136" height="1055" extended-state="4" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32934782" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="4" visible="true" weight="0.10577442" />
+      <window_info active="true" anchor="right" id="Maven Projects" order="4" visible="true" weight="0.24207747" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32934782" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32934782" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20777118" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21478873" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="3" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info id="Designer" order="3" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24986508" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32934782" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20777118" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32934782" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="UI Designer" order="3" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.32934782" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="right" id="Maven Projects" order="4" visible="true" weight="0.10577442" />
+      <window_info id="Favorites" order="3" side_tool="true" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1063,6 +1130,30 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/javafx-src.zip!/javafx/beans/property/BooleanPropertyBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1944">
+          <caret line="143" selection-start-line="143" selection-end-line="143" />
+          <folding>
+            <element signature="e#3671#3672#0" expanded="true" />
+            <element signature="e#3733#3734#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/player_fx_bean/PlayerBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6606">
+          <caret line="515" column="5" selection-start-line="515" selection-start-column="5" selection-end-line="515" selection-end-column="5" />
+          <folding>
+            <element signature="e#20210#20211#0" expanded="true" />
+            <element signature="e#20262#20263#0" expanded="true" />
+            <element signature="e#20325#20326#0" expanded="true" />
+            <element signature="e#20371#20372#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/pwr/rmi/spaceteamos/library/1.0-SNAPSHOT/library-1.0-SNAPSHOT.jar!/player_fx_bean/PlayerBean.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
@@ -1074,9 +1165,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1098,9 +1186,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="52" column="130" selection-start-line="52" selection-start-column="130" selection-end-line="52" selection-end-column="130" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1174,6 +1259,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1944">
           <caret line="143" selection-start-line="143" selection-end-line="143" />
+          <folding>
+            <element signature="e#3671#3672#0" expanded="true" />
+            <element signature="e#3733#3734#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1198,16 +1287,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/player_1/src/main/java/controller/WelcomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/pwr/rmi/spaceteamos/library/1.0-SNAPSHOT/library-1.0-SNAPSHOT.jar!/common/PlayerInterface.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -1226,9 +1305,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="30" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1236,9 +1312,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="529">
           <caret line="30" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1249,54 +1322,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/player_2/src/main/java/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="29" column="59" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player_2/src/main/java/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="70" column="5" selection-start-line="49" selection-start-column="4" selection-end-line="70" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/player_1/src/main/java/player1/Player1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1332">
           <caret line="87" selection-start-line="87" selection-end-line="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player_2/src/main/java/controller/WelcomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player_1/src/main/java/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="27" column="59" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player_1/src/main/java/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1323,25 +1352,11 @@
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/pwr/rmi/spaceteamos/library/1.0-SNAPSHOT/library-1.0-SNAPSHOT.jar!/player_fx_bean/PlayerBean.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="69" column="41" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player3/src/main/java/player3/Player3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="6192">
+          <caret line="391" selection-start-line="391" selection-end-line="391" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#16802#16803#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/player_fx_bean/PlayerBean.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="263" column="42" selection-start-line="263" selection-start-column="13" selection-end-line="263" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -1349,10 +1364,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-          <folding>
-            <element signature="e#509#510#0" expanded="true" />
-            <element signature="e#542#543#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1360,13 +1371,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player3/src/main/java/controller/WelcomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -1391,23 +1395,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/player3/src/main/java/controller/MainController.java">
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/server/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
+        <state relative-caret-position="1984">
+          <caret line="186" column="44" selection-start-line="186" selection-start-column="44" selection-end-line="186" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player_1/src/main/java/controller/WelcomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="52" column="51" selection-start-line="52" selection-start-column="51" selection-end-line="52" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/server/Server.java">
+    <entry file="file://$PROJECT_DIR$/player3/src/main/java/player3/Player3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1984">
-          <caret line="186" column="44" selection-start-line="186" selection-start-column="44" selection-end-line="186" selection-end-column="44" />
+        <state relative-caret-position="90">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player3/src/main/java/controller/WelcomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player3/src/main/java/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player_2/src/main/java/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
           <folding>
-            <element signature="e#5759#5760#0" expanded="true" />
-            <element signature="e#5789#5790#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player_2/src/main/java/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="67" column="111" selection-start-line="64" selection-start-column="24" selection-end-line="67" selection-end-column="111" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player_1/src/main/java/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player_2/src/main/java/controller/WelcomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="53" column="57" selection-start-line="53" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/player_fx_bean/PlayerBean.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2879">
+          <caret line="459" column="40" selection-start-line="459" selection-start-column="20" selection-end-line="459" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player_1/src/main/java/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="67" column="110" selection-start-line="67" selection-start-column="110" selection-end-line="67" selection-end-column="110" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

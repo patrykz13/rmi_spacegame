@@ -56,10 +56,17 @@ public class MainController implements Initializable {
                 playerBean.setIntegerPropertyTimeToEndOfRound(seconds);
                 if(seconds<=0){
                     try {
-                        server.broadcastRoundAnswer("GRACZ "+Main.login+" - Z KABINYPILOTA ODPOWIEDZIAŁ: \n"+
-                                "Prędkość rakiety: "+playerBean.textFieldDevice1Player2_Value.getText()+"\n"+
-                                "Kąt skrętu : "+playerBean.textFieldDevice2Player2_Parameter2_Value.getText()+"\n"+
-                                "tryb silnika: " + playerBean.getDoublePropertyImpulseValue()+"\n",Main.commander);
+                        if(playerBean.isFuelCombustionMode_1())
+                        server.broadcastRoundAnswer("GRACZ "+Main.login+" - Z KABINY PILOTA ODPOWIEDZIAŁ: \n"+
+                                "Prędkość rakiety: "+playerBean.getDoublePropertyShipSpeed()+"\n"+
+                                "Kąt skrętu : "+playerBean.getDoublePropertyAngleOfAttack()+"\n"+
+                                "tryb silnika: " + playerBean.radioButtonDevice2Player1_Option1.getText()+"\n",Main.commander);
+                        else{
+                            server.broadcastRoundAnswer("GRACZ "+Main.login+" - Z KABINY PILOTA ODPOWIEDZIAŁ: \n"+
+                                    "Prędkość rakiety: "+playerBean.getDoublePropertyShipSpeed()+"\n"+
+                                    "Kąt skrętu : "+playerBean.getDoublePropertyAngleOfAttack()+"\n"+
+                                    "tryb silnika: " + playerBean.radioButtonDevice2Player1_Option2.getText()+"\n",Main.commander);
+                        }
                     } catch (RemoteException e) {
                         e.printStackTrace();
                     }
