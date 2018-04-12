@@ -56,7 +56,10 @@ public class MainController implements Initializable {
                 playerBean.setIntegerPropertyTimeToEndOfRound(seconds);
                 if(seconds<=0){
                     try {
-                        server.broadcastRoundAnswer("kurwa",Main.commander);
+                        server.broadcastRoundAnswer("GRACZ "+Main.login+" - Z KABINYPILOTA ODPOWIEDZIAŁ: \n"+
+                                "Prędkość rakiety: "+playerBean.textFieldDevice1Player2_Value.getText()+"\n"+
+                                "Kąt skrętu : "+playerBean.textFieldDevice2Player2_Parameter2_Value.getText()+"\n"+
+                                "tryb silnika: " + playerBean.getDoublePropertyImpulseValue()+"\n",Main.commander);
                     } catch (RemoteException e) {
                         e.printStackTrace();
                     }
