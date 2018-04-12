@@ -502,9 +502,16 @@ public class PlayerBean extends VBox implements Serializable {
         this.doublePropertyTurnValue.set(doublePropertyTurnValue);
     }
 
-
-
-
-
+    public String getStringPropertyShipSpeed() {
+        return stringPropertyShipSpeed.get();
     }
+
+    public StringProperty stringPropertyShipSpeedProperty() {
+        return stringPropertyShipSpeed;
+    }
+
+    public void setStringPropertyShipSpeed(String stringPropertyShipSpeed) {
+        this.stringPropertyShipSpeed.set(stringPropertyShipSpeed);
+    }
+}
 
