@@ -224,7 +224,6 @@ public class PlayerBean extends VBox implements Serializable {
         doublePropertyAngleOfAttack.bind(sliderDevice3Player1_Value.valueProperty());
         doublePropertyTurnValue.bind(sliderDevice3Player1_Value.valueProperty());
         labelTurnValue.textProperty().bind(doublePropertyTurnValue.asString());
-        textFieldDevice1Player1_Value.textProperty().bind(stringPropertyShipSpeed);
 
 
         // Gracz 2:
