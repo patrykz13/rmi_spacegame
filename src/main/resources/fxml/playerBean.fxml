@@ -42,8 +42,8 @@
           <HBox>
             <VBox disable="false" prefHeight="307.0000999999975" prefWidth="396.0">
               <children>
-                <VBox fx:id="vBoxPlayer1" disable="true" maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="471.0" prefWidth="1000.0" visible="false" VBox.vgrow="ALWAYS">
-                  <Label alignment="CENTER" prefHeight="25.0" prefWidth="2000.0" text="Urządzenia">
+                <VBox fx:id="vBoxPlayer1" disable="false" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="471.0" prefWidth="1000.0" visible="true" VBox.vgrow="ALWAYS">
+                  <Label alignment="CENTER" prefHeight="25.0" prefWidth="2000.0" text="Urządzenia:">
                     <font>
                       <Font size="16.0" fx:id="x2" />
                     </font>
@@ -57,7 +57,7 @@
                       <HBox.margin>
                         <Insets />
                       </HBox.margin>
-                      <Label fx:id="labelDevice1Player1_Name" font="$x2" prefHeight="25.0" text="Prędkość rakiety:" textFill="BLACK" />
+                      <Label fx:id="labelDevice1Player1_Name" font="$x2" prefHeight="25.0" text="Prędkość rakiety[km/h]:" textFill="BLACK" />
                       <TextField fx:id="textFieldDevice1Player1_Value" prefHeight="25.0" prefWidth="257.0">
                         <VBox.margin>
                           <Insets left="15.0" right="15.0" />
@@ -70,7 +70,7 @@
                       </HBox>
                     </VBox>
                   </HBox>
-                  <Region prefHeight="13.0" prefWidth="376.0" VBox.vgrow="ALWAYS" />
+                  <Region prefHeight="26.0" prefWidth="376.0" VBox.vgrow="ALWAYS" />
                   <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="254.0">
                     <VBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
                       <HBox.margin>
@@ -109,6 +109,7 @@
                       </HBox>
                     </VBox>
                   </HBox>
+                  <Region prefHeight="34.0" prefWidth="384.0" />
                   <VBox alignment="CENTER" prefHeight="46.0" prefWidth="372.0">
                     <Label fx:id="labelDevice2Player1_Name" font="$x2" prefHeight="25.0" text="tryb silnika:" textFill="BLACK" />
                     <HBox alignment="TOP_CENTER" maxHeight="25.0" minHeight="25.0" prefWidth="257.0" style="-fx-background-color: grey; ">
@@ -138,7 +139,7 @@
                     <Insets top="10.0" />
                   </VBox.margin>
                 </VBox>
-                <VBox fx:id="vBoxPlayer2" disable="false" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="471.0" prefWidth="1000.0" visible="true" VBox.vgrow="ALWAYS">
+                <VBox fx:id="vBoxPlayer2" disable="true" maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="471.0" prefWidth="1000.0" visible="false" VBox.vgrow="ALWAYS">
                   <Label alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" text="Urządzenia:" textFill="$x5" />
                   <Region VBox.vgrow="ALWAYS" />
                   <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="254.0">
@@ -146,7 +147,7 @@
                       <HBox.margin>
                         <Insets />
                       </HBox.margin>
-                      <Label fx:id="labelDevice1Player2_Name" font="$x2" prefHeight="25.0" text="Temperatura promienia:" textFill="BLACK" />
+                      <Label fx:id="labelDevice1Player2_Name" font="$x2" prefHeight="25.0" text="Temperatura promienia [°C]" textFill="BLACK" />
                       <TextField fx:id="textFieldDevice1Player2_Value" prefHeight="25.0" prefWidth="257.0">
                         <VBox.margin>
                           <Insets left="15.0" right="15.0" />
@@ -179,7 +180,7 @@
                           </HBox.margin>
                           <HBox alignment="CENTER">
                             <Region maxHeight="1.0" minHeight="1.0" prefHeight="200.0" HBox.hgrow="ALWAYS" />
-                            <TextField fx:id="textFieldDevice2Player2_Parameter2_Value" editable="false" prefHeight="25.0" prefWidth="326.0">
+                            <TextField fx:id="textFieldDevice2Player2_Parameter2_Value" editable="true" prefHeight="25.0" prefWidth="326.0">
                               <HBox.margin>
                                 <Insets left="10.0" right="10.0" />
                               </HBox.margin>
@@ -205,7 +206,7 @@
                       <HBox.margin>
                         <Insets top="8.0" />
                       </HBox.margin>
-                      <Label fx:id="labelDevice3Player2_Name" font="$x2" prefHeight="25.0" text="długość promienia" textFill="BLACK" />
+                      <Label fx:id="labelDevice3Player2_Name" font="$x2" prefHeight="25.0" text="długość promienia [m]" textFill="BLACK" />
                       <HBox>
                         <VBox.margin>
                           <Insets left="15.0" right="15.0" />
