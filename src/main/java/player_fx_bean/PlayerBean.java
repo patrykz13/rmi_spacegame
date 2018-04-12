@@ -35,7 +35,7 @@ public class PlayerBean extends VBox implements Serializable {
     private final BooleanProperty booleanPropertyLoadBullet = new SimpleBooleanProperty(false);
     private final DoubleProperty doublePropertyImpulseValue = new SimpleDoubleProperty(0.0);
     private final DoubleProperty doublePropertyTurnValue = new SimpleDoubleProperty(0.0);
-    private final DoubleProperty doublePropertyShipSpeed = new SimpleDoubleProperty(0.0);
+    private final StringProperty stringPropertyShipSpeed = new SimpleStringProperty("");
 
 
     @FXML
@@ -224,7 +224,7 @@ public class PlayerBean extends VBox implements Serializable {
         doublePropertyAngleOfAttack.bind(sliderDevice3Player1_Value.valueProperty());
         doublePropertyTurnValue.bind(sliderDevice3Player1_Value.valueProperty());
         labelTurnValue.textProperty().bind(doublePropertyTurnValue.asString());
-        textFieldDevice1Player1_Value.textProperty().bind(doublePropertyShipSpeed.asString());
+        textFieldDevice1Player1_Value.textProperty().bind(stringPropertyShipSpeed);
 
 
         // Gracz 2:
@@ -503,17 +503,7 @@ public class PlayerBean extends VBox implements Serializable {
     }
 
 
-    public double getDoublePropertyShipSpeed() {
-        return doublePropertyShipSpeed.get();
-    }
 
-    public DoubleProperty doublePropertyShipSpeedProperty() {
-        return doublePropertyShipSpeed;
-    }
-
-    public void setDoublePropertyShipSpeed(double doublePropertyShipSpeed) {
-        this.doublePropertyShipSpeed.set(doublePropertyShipSpeed);
-    }
 
 
     }
