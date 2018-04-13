@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>player3</artifactId>
+    <artifactId>player_3</artifactId>
     <build>
         <plugins>
             <plugin>
@@ -21,6 +21,7 @@
                 </configuration>
             </plugin>
         </plugins>
+            <finalName>hsample</finalName>
     </build>
 
     <dependencies>

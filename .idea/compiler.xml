@@ -10,6 +10,7 @@
         <module name="player3" />
         <module name="player_1" />
         <module name="player_2" />
+        <module name="player_3" />
         <module name="server" />
       </profile>
     </annotationProcessing>
