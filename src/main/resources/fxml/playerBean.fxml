@@ -332,52 +332,56 @@
               </children>
             </VBox>
           </HBox>
-          <VBox prefHeight="307.0" prefWidth="318.0">
+          <VBox prefHeight="307.0" prefWidth="361.0">
             <children>
               <HBox prefHeight="24.0" prefWidth="307.0">
                 <children>
-                  <Label alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="Ilość graczy:" textFill="BLACK" />
+                  <Label alignment="CENTER" prefHeight="25.0" prefWidth="2000.0" style=";" text="Ilość graczy:" textFill="BLACK">
+                    <font>
+                      <Font size="15.0" fx:id="x4" />
+                    </font>
+                  </Label>
                 </children>
               </HBox>
               <HBox prefHeight="24.0" prefWidth="307.0">
                 <children>
-                  <Label fx:id="labelNumberOfPlayers" alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="4" textFill="BLACK" />
-                </children>
-              </HBox>
-              <Region prefHeight="29.0" prefWidth="318.0" />
-              <HBox prefHeight="24.0" prefWidth="307.0">
-                <children>
-                  <Label alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="Kapitan:" textFill="BLACK" />
-                </children>
-              </HBox>
-              <HBox prefHeight="24.0" prefWidth="307.0">
-                <children>
-                  <Label fx:id="labelCommander" alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="zdral" textFill="BLACK" />
-                </children>
-              </HBox>
-              <Region prefHeight="29.0" prefWidth="318.0" />
-              <Label alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="Czas do końca gry:" textFill="BLACK" />
-              <Label fx:id="labelTimeToTheEnd" alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="25" textFill="BLACK" />
-              <Region prefHeight="29.0" prefWidth="318.0" />
-              <HBox prefHeight="24.0" prefWidth="307.0">
-                <children>
-                  <Label alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="Punkty:" textFill="BLACK" />
-                </children>
-              </HBox>
-              <HBox prefHeight="24.0" prefWidth="307.0">
-                <children>
-                  <Label fx:id="labelPoints" alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="3" textFill="BLACK" />
+                  <Label fx:id="labelNumberOfPlayers" alignment="CENTER" font="$x4" prefHeight="25.0" prefWidth="2000.0" style=";" text="4" textFill="BLACK" />
                 </children>
               </HBox>
               <Region prefHeight="29.0" prefWidth="318.0" />
               <HBox prefHeight="24.0" prefWidth="307.0">
                 <children>
-                  <Label alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="Status gry:" textFill="BLACK" />
+                  <Label alignment="CENTER" font="$x4" prefHeight="25.0" prefWidth="2000.0" style=";" text="Kapitan:" textFill="BLACK" />
                 </children>
               </HBox>
               <HBox prefHeight="24.0" prefWidth="307.0">
                 <children>
-                  <Label fx:id="labelGameStatus" alignment="CENTER" font="$x2" prefHeight="25.0" prefWidth="2000.0" style=";" text="gra zaczęta!" textFill="BLACK" />
+                  <Label fx:id="labelCommander" alignment="CENTER" font="$x4" prefHeight="25.0" prefWidth="2000.0" style=";" text="zdral" textFill="BLACK" />
+                </children>
+              </HBox>
+              <Region prefHeight="29.0" prefWidth="318.0" />
+              <Label alignment="CENTER" font="$x4" prefHeight="25.0" prefWidth="2000.0" style=";" text="Czas do końca gry:" textFill="BLACK" />
+              <Label fx:id="labelTimeToTheEnd" alignment="CENTER" font="$x4" prefHeight="25.0" prefWidth="2000.0" style=";" text="25" textFill="BLACK" />
+              <Region prefHeight="29.0" prefWidth="318.0" />
+              <HBox prefHeight="24.0" prefWidth="307.0">
+                <children>
+                  <Label alignment="CENTER" font="$x4" prefHeight="25.0" prefWidth="2000.0" style=";" text="Punkty:" textFill="BLACK" />
+                </children>
+              </HBox>
+              <HBox prefHeight="24.0" prefWidth="307.0">
+                <children>
+                  <Label fx:id="labelPoints" alignment="CENTER" font="$x4" prefHeight="25.0" prefWidth="2000.0" style=";" text="3" textFill="BLACK" />
+                </children>
+              </HBox>
+              <Region prefHeight="29.0" prefWidth="318.0" />
+              <HBox prefHeight="24.0" prefWidth="307.0">
+                <children>
+                  <Label alignment="CENTER" font="$x4" prefHeight="25.0" prefWidth="2000.0" style=";" text="Status gry:" textFill="BLACK" />
+                </children>
+              </HBox>
+              <HBox prefHeight="24.0" prefWidth="307.0">
+                <children>
+                  <Label fx:id="labelGameStatus" alignment="CENTER" font="$x4" prefHeight="21.0" prefWidth="361.0" style=";" text="gra zaczęta!" textFill="BLACK" />
                 </children>
               </HBox>
             </children>
