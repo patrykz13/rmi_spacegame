@@ -1,7 +1,6 @@
 package player3;
 
 
-
 import common.PlayerInterface;
 import common.ServerInterface;
 import common.SpaceCommand;
@@ -14,48 +13,40 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
-public class Player3 extends UnicastRemoteObject implements PlayerInterface
-{
+public class Player3 extends UnicastRemoteObject implements PlayerInterface {
 
     private ServerInterface server;
     private MainController controller;
 
-    public Player3(String name, MainController controller, String type, String commanderName) throws RemoteException
-    {
-        try
-        {
+    public Player3(String name, MainController controller, String type, String commanderName) throws RemoteException {
+        try {
             String url = "rmi://localhost/sserver";
             server = (ServerInterface) Naming.lookup(url);
-            server.registerPlayer(this, type, name,commanderName);
+            server.registerPlayer(this, type, name, commanderName);
             this.controller = controller;
-        } catch (RemoteException ex)
-        {
+        } catch (RemoteException ex) {
             System.out.println("Server RemoteException.");
             System.out.println(ex.getMessage());
-        } catch (NotBoundException ex)
-        {
+        } catch (NotBoundException ex) {
             System.out.println("Server NotBoundException.");
             System.out.println(ex.getMessage());
-        } catch (MalformedURLException ex)
-        {
+        } catch (MalformedURLException ex) {
             System.out.println("Server MalformedURLException.");
             System.out.println(ex.getMessage());
         }
     }
 
-    public ServerInterface getServer()
-    {
+    public ServerInterface getServer() {
         return server;
     }
 
 
-    public void confirmConnection(String s) throws RemoteException
-    {
+    public void confirmConnection(String s) throws RemoteException {
 
     }
+
     @Override
-    public void receiveCommand(SpaceCommand spaceCommand) throws RemoteException
-    {
+    public void receiveCommand(SpaceCommand spaceCommand) throws RemoteException {
         System.out.println("Received command " + spaceCommand.getType() + " " + spaceCommand.getParameters() + ".");
         //String text = spaceCommand.getType().name() + " " + spaceCommand.getParameters().toString();
         //controller.textField.setText(text);
@@ -70,14 +61,14 @@ public class Player3 extends UnicastRemoteObject implements PlayerInterface
 
     @Override
     public void receivePoints(Integer integer) throws RemoteException {
-        Platform.runLater(()-> {
+        Platform.runLater(() -> {
             controller.getPlayerBean().setIntegerPropertyNumberOfPoints(integer);
         });
     }
 
     @Override
     public void receiveNumberOfPlayers(Integer integer) throws RemoteException {
-        Platform.runLater(()-> {
+        Platform.runLater(() -> {
             controller.getPlayerBean().setIntegerPropertyNumberOfPlayers(integer);
 
         });
@@ -85,15 +76,17 @@ public class Player3 extends UnicastRemoteObject implements PlayerInterface
 
     @Override
     public void becomeKickout(Boolean aBoolean) throws RemoteException {
-        Platform.runLater(()-> {
+        Platform.runLater(() -> {
             controller.getPlayerBean().setBooleanPropertyKickFromServer(aBoolean);
 
         });
     }
+
     @Override
     public void startRound(Integer integer) throws RemoteException {
         controller.startThread(integer);
     }
+
     @Override
     public void lossConnectionWithServer() throws RemoteException {
         controller.exitFromApplication();

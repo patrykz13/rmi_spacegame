@@ -20,9 +20,9 @@ public class CustomMessageBox {
      * <p>showMessageBox.</p>
      *
      * @param alertType a javafx.scene.control.Alert$AlertType object.
-     * @param title a {@link String} object.
-     * @param header a {@link String} object.
-     * @param content a {@link String} object.
+     * @param title     a {@link String} object.
+     * @param header    a {@link String} object.
+     * @param content   a {@link String} object.
      * @return a javafx.scene.control.Alert object.
      */
     public Alert showMessageBox(Alert.AlertType alertType, String title, String header, String content) {
@@ -37,12 +37,12 @@ public class CustomMessageBox {
     /**
      * <p>showConfirmMessageBox.</p>
      *
-     * @param alertType a javafx.scene.control.Alert$AlertType object.
-     * @param title a {@link String} object.
-     * @param header a {@link String} object.
-     * @param content a {@link String} object.
+     * @param alertType   a javafx.scene.control.Alert$AlertType object.
+     * @param title       a {@link String} object.
+     * @param header      a {@link String} object.
+     * @param content     a {@link String} object.
      * @param confirmText a {@link String} object.
-     * @param cancelText a {@link String} object.
+     * @param cancelText  a {@link String} object.
      * @return a javafx.scene.control.Alert object.
      */
     public Alert showConfirmMessageBox(Alert.AlertType alertType, String title, String header, String content,

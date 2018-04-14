@@ -10,42 +10,37 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.util.Duration;
 import main.Main;
 import player2.Player2;
 import player_fx_bean.PlayerBean;
-import java.lang.Thread;
 
 import java.net.URL;
-import javafx.util.Duration;
-
 import java.rmi.RemoteException;
 import java.util.ResourceBundle;
-import java.util.concurrent.atomic.AtomicInteger;
 
-public class MainController implements Initializable{
-
-    public PlayerBean getPlayerBean() {
-        return playerBean;
-    }
+public class MainController implements Initializable {
 
     @FXML
     PlayerBean playerBean;
     private Player2 player;
     private ServerInterface server;
-    private Integer seconds=0;
+    private Integer seconds = 0;
     private CustomMessageBox customMessageBox;
 
+    public PlayerBean getPlayerBean() {
+        return playerBean;
+    }
+
     public void initialize(URL location, ResourceBundle resources) {
-        customMessageBox=new CustomMessageBox();
+        customMessageBox = new CustomMessageBox();
         playerBean.initPlayerAndCaptainNicknames(Main.login, Main.commander, "działko laserowe");
 
-        try
-        {
-            player = new Player2(Main.login, this, "działko laserowe",Main.commander);
+        try {
+            player = new Player2(Main.login, this, "działko laserowe", Main.commander);
             server = player.getServer();
             server.broadcastNumberOfPlayers(Main.commander);
-        } catch (Exception ex)
-        {
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
 
@@ -53,21 +48,21 @@ public class MainController implements Initializable{
 
 
     public void startThread(Integer integer) {
-        Timeline time= new Timeline();
-        seconds=integer;
-        KeyFrame frame= new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>(){
+        Timeline time = new Timeline();
+        seconds = integer;
+        KeyFrame frame = new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
 
             @Override
             public void handle(ActionEvent event) {
                 seconds--;
                 playerBean.setIntegerPropertyTimeToEndOfRound(seconds);
-                if(seconds<=0){
+                if (seconds <= 0) {
                     try {
-                        server.broadcastRoundAnswer("GRACZ "+Main.login+" - DZIAŁKO LASEROWE ODPOWIEDZIAŁ: \n"+
-                                        "Temperatura promienia  "+playerBean.textFieldDevice1Player2_Value.getText()+"\n"+
-                                        "Ilość aktywnych promieni: "+playerBean.textFieldDevice2Player2_Parameter2_Value.getText()+"\n"+
-                                        "Długość promienia: " + playerBean.getDoublePropertyImpulseValue()+"\n"
-                                ,Main.commander);
+                        server.broadcastRoundAnswer("GRACZ " + Main.login + " - DZIAŁKO LASEROWE ODPOWIEDZIAŁ: \n" +
+                                        "Temperatura promienia  " + playerBean.textFieldDevice1Player2_Value.getText() + "\n" +
+                                        "Ilość aktywnych promieni: " + playerBean.textFieldDevice2Player2_Parameter2_Value.getText() + "\n" +
+                                        "Długość promienia: " + playerBean.getDoublePropertyImpulseValue() + "\n"
+                                , Main.commander);
                     } catch (RemoteException e) {
                         e.printStackTrace();
                     }
@@ -80,7 +75,7 @@ public class MainController implements Initializable{
 
         time.setCycleCount(Timeline.INDEFINITE);
         time.getKeyFrames().add(frame);
-        if(time!=null){
+        if (time != null) {
             time.stop();
         }
         time.play();

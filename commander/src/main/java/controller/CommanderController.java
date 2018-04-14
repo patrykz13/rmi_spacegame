@@ -17,8 +17,6 @@ import javafx.util.Duration;
 import main.Main;
 
 import java.net.URL;
-import java.rmi.RemoteException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -32,7 +30,7 @@ public class CommanderController implements Initializable {
     public TextField textFieldBattleCannon;
     public TextField textFieldLaserGun;
     public TableView<String> tableViewPlayer;
-    public TableColumn<String,String> tableColumnPlayerName;
+    public TableColumn<String, String> tableColumnPlayerName;
     public Button buttonRefresh;
     public TextField textFieldPoints;
     public Label labelCommander;
@@ -44,34 +42,32 @@ public class CommanderController implements Initializable {
     private ObservableList<String> players = FXCollections.observableArrayList();
     private Integer totalScore;
     private Integer seconds;
+
     public void givePoints_onAction(ActionEvent actionEvent) {
-        totalScore+=Integer.parseInt(textFieldPoints.getText());
+        totalScore += Integer.parseInt(textFieldPoints.getText());
         System.out.println(totalScore);
         System.out.println(Main.login);
 
-        sendPoints(Main.login,totalScore);
+        sendPoints(Main.login, totalScore);
     }
 
     public void startRound_onAction(ActionEvent actionEvent) {
 
-        if(!players.isEmpty()){
-            if (!labelRoundTime.getText().equals(""))
-            {
-                if (textFieldCockpit!=null)
-                    broadcastCommand("kabina pilota", textFieldCockpit.getText(),Main.login);
-                if (textFieldBattleCannon!=null)
-                    broadcastCommand("Działko bojowe", textFieldBattleCannon.getText(),Main.login);
-                if (textFieldLaserGun!=null)
-                    broadcastCommand("działko laserowe", textFieldLaserGun.getText(),Main.login);
+        if (!players.isEmpty()) {
+            if (!labelRoundTime.getText().equals("")) {
+                if (textFieldCockpit != null)
+                    broadcastCommand("kabina pilota", textFieldCockpit.getText(), Main.login);
+                if (textFieldBattleCannon != null)
+                    broadcastCommand("Działko bojowe", textFieldBattleCannon.getText(), Main.login);
+                if (textFieldLaserGun != null)
+                    broadcastCommand("działko laserowe", textFieldLaserGun.getText(), Main.login);
                 startRound(Integer.parseInt(labelRoundTime.getText()));
-            }
-            else{
+            } else {
                 customMessageBox.showMessageBox(Alert.AlertType.WARNING, "błąd",
                         "Runda nie zostałą rozpoczęta.",
                         "Powód: czas nie został podany.").showAndWait();
             }
-        }
-        else{
+        } else {
             customMessageBox.showMessageBox(Alert.AlertType.WARNING, "błąd",
                     "Runda nie zostałą rozpoczęta.",
                     "Powód: brak graczy.").showAndWait();
@@ -81,12 +77,10 @@ public class CommanderController implements Initializable {
     }
 
     private void startRound(Integer roundTime) {
-        try
-        {
+        try {
             startThread(roundTime);
-            server.startRound(roundTime,Main.login);
-        } catch (Exception ex)
-        {
+            server.startRound(roundTime, Main.login);
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
     }
@@ -95,14 +89,12 @@ public class CommanderController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         labelCommander.setText(Main.login);
         tableColumnPlayerName.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
-        totalScore=0;
-        try
-        {
+        totalScore = 0;
+        try {
             commander = new Commander(Main.login, this);
             server = commander.getServer();
-            Main.server=server;
-        } catch (Exception ex)
-        {
+            Main.server = server;
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
         totalScore = 0;
@@ -131,7 +123,7 @@ public class CommanderController implements Initializable {
 
         time.setCycleCount(Timeline.INDEFINITE);
         time.getKeyFrames().add(frame);
-        if(time!=null){
+        if (time != null) {
             time.stop();
         }
         time.play();
@@ -148,35 +140,26 @@ public class CommanderController implements Initializable {
     public void refresh_onAction(ActionEvent actionEvent) {
     }
 
-    private void broadcastCommand(String type, List<Integer> parameters)
-    {
-        try
-        {
+    private void broadcastCommand(String type, List<Integer> parameters) {
+        try {
             server.broadcastCommand(new SpaceCommand(type, parameters));
-        } catch (Exception ex)
-        {
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
     }
 
-    private void broadcastCommand(String type, String message,String commanderName)
-    {
-        try
-        {
-            server.broadcastCommand(type, message,commanderName);
-        } catch (Exception ex)
-        {
+    private void broadcastCommand(String type, String message, String commanderName) {
+        try {
+            server.broadcastCommand(type, message, commanderName);
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
     }
 
-    private void sendPoints(String commanderName, Integer points)
-    {
-        try
-        {
+    private void sendPoints(String commanderName, Integer points) {
+        try {
             server.sendPoints(commanderName, points);
-        } catch (Exception ex)
-        {
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
     }
@@ -190,7 +173,6 @@ public class CommanderController implements Initializable {
     public void exitFromApplication() {
         Platform.runLater(() -> {
             Main.server = null;
-            //labelConnectionStatus.setText("Status połączenia: rozłączono z serwerem.");
             customMessageBox.showMessageBox(Alert.AlertType.ERROR, "BŁĄD KRYTYCZNY",
                     "Gra została przerwana.",
                     "Powód: utracono połączenie z serwerem.").showAndWait();

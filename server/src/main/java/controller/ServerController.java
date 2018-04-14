@@ -1,10 +1,7 @@
 package controller;
 
-import common.SpaceCommand;
 import customBox.CustomMessageBox;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -24,27 +21,27 @@ import java.rmi.RemoteException;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+import static main.Main.commanders;
+import static main.Main.players;
+
 public class ServerController implements Initializable {
     public VBox vBoxMain;
     public TableView<ConnectedCommander> tableViewCommander;
     public TableView<ConnectedPlayer> tableViewPlayer;
-    public TableColumn<ConnectedPlayer,String> tableColumnPlayerName;
-    public TableColumn<ConnectedPlayer,String>  tableColumnPlayerCommander;
+    public TableColumn<ConnectedPlayer, String> tableColumnPlayerName;
+    public TableColumn<ConnectedPlayer, String> tableColumnPlayerCommander;
+    public TableColumn<ConnectedCommander, String> tableColumnCommandersPlayers;
+    public CustomMessageBox customMessageBox;
     private Server ss;
     @FXML
     private TableColumn<ConnectedCommander, String> tableColumnCommanderName;
-    public TableColumn<ConnectedCommander,String> tableColumnCommandersPlayers;
-    private ObservableList<ConnectedCommander> commanders = FXCollections.observableArrayList();
-    private ObservableList<ConnectedPlayer> players = FXCollections.observableArrayList();
-    public CustomMessageBox customMessageBox;
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        customMessageBox=new CustomMessageBox();
-        tableColumnCommanderName.setCellValueFactory(new PropertyValueFactory<ConnectedCommander,String>("name"));
-        tableColumnCommandersPlayers.setCellValueFactory(new PropertyValueFactory<ConnectedCommander,String>("numberOfPlayers"));
-        tableColumnPlayerName.setCellValueFactory(new PropertyValueFactory<ConnectedPlayer,String>("name"));
+        customMessageBox = new CustomMessageBox();
+        tableColumnCommanderName.setCellValueFactory(new PropertyValueFactory<ConnectedCommander, String>("name"));
+        tableColumnCommandersPlayers.setCellValueFactory(new PropertyValueFactory<ConnectedCommander, String>("numberOfPlayers"));
+        tableColumnPlayerName.setCellValueFactory(new PropertyValueFactory<ConnectedPlayer, String>("name"));
         tableColumnPlayerCommander.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCommander().getName()));        //
         tableViewCommander.setItems(commanders);
         tableViewPlayer.setItems(players);
@@ -56,15 +53,14 @@ public class ServerController implements Initializable {
             ss.removePlayer(selectedPlayer.getName());
             players.remove(tableViewPlayer.getSelectionModel().getSelectedItem());
             selectedPlayer.getConnection().becomeKickout(true);
-            selectedPlayer.getConnection().receiveCommand("\n zostałeś wykickowany :(");
-            // Main.playerObservableList.remove(selectedPlayer);
+            selectedPlayer.getConnection().receiveCommand(" zostałeś wykickowany :(");
         } else
             customMessageBox.showMessageBox(Alert.AlertType.WARNING, "Ostrzeżenie",
                     "Operacja wyrzucenia kapitana z serwera nie powiedzie się.",
                     "Powód: nie zaznaczono kapitana.")
                     .showAndWait();
 
-        ConnectedPlayer c =  ss.getPlayers().get(tableViewPlayer.getSelectionModel().getSelectedItem().getName());
+        ConnectedPlayer c = ss.getPlayers().get(tableViewPlayer.getSelectionModel().getSelectedItem().getName());
         System.out.println(c.getName());
 
         ss.removePlayer(c.getName());
@@ -76,15 +72,15 @@ public class ServerController implements Initializable {
         refreshTables();
     }
 
-    private void refreshTables() {
+    public void refreshTables() {
         commanders.clear();
         players.clear();
-        if(ss.getCommanders()!=null) {
+        if (ss.getCommanders() != null) {
             for (Map.Entry<String, ConnectedCommander> entry : ss.getCommanders().entrySet()) {
                 commanders.add(entry.getValue());
             }
         }
-        if(ss.getPlayers()!=null) {
+        if (ss.getPlayers() != null) {
             for (Map.Entry<String, ConnectedPlayer> entry : ss.getPlayers().entrySet()) {
                 players.add(entry.getValue());
             }
@@ -114,28 +110,17 @@ public class ServerController implements Initializable {
 
     public void buttonStart_onAction(ActionEvent actionEvent) {
 
-        try
-        {
+        try {
             int port = 1099;
             String url = "rmi://localhost/sserver";
             java.rmi.registry.LocateRegistry.createRegistry(port);
             ss = new Server(this);
             Naming.rebind(url, ss);
             System.out.println("Server ready.");
-        } catch (Exception ex)
-        {
+        } catch (Exception ex) {
             System.out.println("Server exception.");
             System.out.println(ex.getMessage());
         }
     }
 
-    public void refreshCaptainsList() throws RemoteException {
-        commanders.clear();
-        commanders.addAll(ss.getCommanders().values());
-    }
-
-    public void refreshPlayersList(){
-        players.clear();
-        players.addAll(ss.getPlayers().values());
-    }
 }

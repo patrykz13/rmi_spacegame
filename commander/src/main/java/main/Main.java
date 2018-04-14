@@ -3,7 +3,6 @@ package main;
 import common.ServerInterface;
 import customBox.CustomMessageBox;
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,13 +13,25 @@ import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Main extends Application
-{
+public class Main extends Application {
 
-    private static Stage mainStage;
     public static String login;
     public static ServerInterface server;
     public static CustomMessageBox customMessageBox;
+    private static Stage mainStage;
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    public static Stage getMainStage() {
+        return mainStage;
+    }
+
+    public static void setMainStage(Stage mainStage) {
+        Main.mainStage = mainStage;
+    }
+
     @Override
     public void start(Stage primaryStage) {
         try {
@@ -40,7 +51,7 @@ public class Main extends Application
     }
 
     @Override
-    public void stop(){
+    public void stop() {
         if (server != null) {
             try {
                 server.removeCommander(login);
@@ -50,18 +61,6 @@ public class Main extends Application
         }
 
         System.exit(0);
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-
-    public static Stage getMainStage() {
-        return mainStage;
-    }
-
-    public static void setMainStage(Stage mainStage) {
-        Main.mainStage = mainStage;
     }
 
 }

@@ -27,71 +27,67 @@ public class MainController implements Initializable {
     private ServerInterface server;
     private Integer seconds;
     private CustomMessageBox customMessageBox;
+
     public void initialize(URL location, ResourceBundle resources) {
 
-        customMessageBox=new CustomMessageBox();
+        customMessageBox = new CustomMessageBox();
         playerBean.initPlayerAndCaptainNicknames(Main.login, Main.commander, "Działko bojowe");
 
-        try
-        {
-            player = new Player3(Main.login, this, "Działko bojowe",Main.commander);
+        try {
+            player = new Player3(Main.login, this, "Działko bojowe", Main.commander);
             server = player.getServer();
             server.broadcastNumberOfPlayers(Main.commander);
-        } catch (Exception ex)
-        {
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
 
     }
 
     public void startThread(Integer integer) {
-        Timeline time= new Timeline();
-        seconds=integer;
-        KeyFrame frame= new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>(){
+        Timeline time = new Timeline();
+        seconds = integer;
+        KeyFrame frame = new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
 
             @Override
             public void handle(ActionEvent event) {
                 seconds--;
                 playerBean.setIntegerPropertyTimeToEndOfRound(seconds);
-                if(seconds<=0){
+                if (seconds <= 0) {
                     try {
-                        if(playerBean.isBooleanPropertyLoadBullet()){
-                            if(playerBean.isTypeOfTriggerMechanism_1())
-                                server.broadcastRoundAnswer("GRACZ "+Main.login+" - Z KABINY PILOTA ODPOWIEDZIAŁ: \n"+
-                                        "Ilość pocisków: "+playerBean.textFieldDevice1Player3_Value.getText()+"\n"+
-                                        "Załadowano pocisk : "+"\n"+
-                                        "rodzaju mechanizmu wystrzału: " + playerBean.radioButtonDevice2Player3_Option1.getText()+"\n",Main.commander);
-                        else if(playerBean.isTypeOfTriggerMechanism_2()){
-                                server.broadcastRoundAnswer("GRACZ "+Main.login+" - Z KABINY PILOTA ODPOWIEDZIAŁ: \n"+
-                                        "Ilość pocisków: "+playerBean.textFieldDevice1Player3_Value.getText()+"\n"+
-                                        "Załadowano pocisk : "+"\n"+
-                                        "rodzaju mechanizmu wystrzału: " + playerBean.radioButtonDevice2Player3_Option2.getText()+"\n",Main.commander);
-
-                            }
-                            else {
+                        if (playerBean.isBooleanPropertyLoadBullet()) {
+                            if (playerBean.isTypeOfTriggerMechanism_1())
                                 server.broadcastRoundAnswer("GRACZ " + Main.login + " - Z KABINY PILOTA ODPOWIEDZIAŁ: \n" +
-                                        "Ilość pocisków: "+playerBean.textFieldDevice1Player3_Value.getText()+"\n"+
-                                        "Załadowano pocisk : "+"\n"+
+                                        "Ilość pocisków: " + playerBean.textFieldDevice1Player3_Value.getText() + "\n" +
+                                        "Załadowano pocisk : " + "\n" +
+                                        "rodzaju mechanizmu wystrzału: " + playerBean.radioButtonDevice2Player3_Option1.getText() + "\n", Main.commander);
+                            else if (playerBean.isTypeOfTriggerMechanism_2()) {
+                                server.broadcastRoundAnswer("GRACZ " + Main.login + " - Z KABINY PILOTA ODPOWIEDZIAŁ: \n" +
+                                        "Ilość pocisków: " + playerBean.textFieldDevice1Player3_Value.getText() + "\n" +
+                                        "Załadowano pocisk : " + "\n" +
+                                        "rodzaju mechanizmu wystrzału: " + playerBean.radioButtonDevice2Player3_Option2.getText() + "\n", Main.commander);
+
+                            } else {
+                                server.broadcastRoundAnswer("GRACZ " + Main.login + " - Z KABINY PILOTA ODPOWIEDZIAŁ: \n" +
+                                        "Ilość pocisków: " + playerBean.textFieldDevice1Player3_Value.getText() + "\n" +
+                                        "Załadowano pocisk : " + "\n" +
                                         "rodzaju mechanizmu wystrzału: " + "nie ustawiono" + "\n", Main.commander);
                             }
-                        }
-                        else{
-                            if(playerBean.isTypeOfTriggerMechanism_1())
-                                server.broadcastRoundAnswer("GRACZ "+Main.login+" - Z KABINY PILOTA ODPOWIEDZIAŁ: \n"+
-                                        "Ilość pocisków: "+playerBean.textFieldDevice1Player3_Value.getText()+"\n"+
-                                        "nie załadowano pocisk : "+"\n"
-                                        +"rodzaju mechanizmu wystrzału: " + playerBean.radioButtonDevice2Player3_Option1.getText()+"\n",Main.commander);
-                        else if(playerBean.isTypeOfTriggerMechanism_2()){
-                                server.broadcastRoundAnswer("GRACZ "+Main.login+" - Z KABINY PILOTA ODPOWIEDZIAŁ: \n"+
-                                        "Ilość pocisków: "+playerBean.textFieldDevice1Player3_Value.getText()+"\n"+
-                                        "nie załadowano pocisk : "+"\n"+
-                                        "rodzaju mechanizmu wystrzału: " + playerBean.radioButtonDevice2Player3_Option2.getText()+"\n",Main.commander);
-
-                            }
-                            else {
+                        } else {
+                            if (playerBean.isTypeOfTriggerMechanism_1())
                                 server.broadcastRoundAnswer("GRACZ " + Main.login + " - Z KABINY PILOTA ODPOWIEDZIAŁ: \n" +
-                                        "Ilość pocisków: "+playerBean.textFieldDevice1Player3_Value.getText()+"\n"+
-                                        " nie załadowano pocisk : "+"\n"+
+                                        "Ilość pocisków: " + playerBean.textFieldDevice1Player3_Value.getText() + "\n" +
+                                        "nie załadowano pocisk : " + "\n"
+                                        + "rodzaju mechanizmu wystrzału: " + playerBean.radioButtonDevice2Player3_Option1.getText() + "\n", Main.commander);
+                            else if (playerBean.isTypeOfTriggerMechanism_2()) {
+                                server.broadcastRoundAnswer("GRACZ " + Main.login + " - Z KABINY PILOTA ODPOWIEDZIAŁ: \n" +
+                                        "Ilość pocisków: " + playerBean.textFieldDevice1Player3_Value.getText() + "\n" +
+                                        "nie załadowano pocisk : " + "\n" +
+                                        "rodzaju mechanizmu wystrzału: " + playerBean.radioButtonDevice2Player3_Option2.getText() + "\n", Main.commander);
+
+                            } else {
+                                server.broadcastRoundAnswer("GRACZ " + Main.login + " - Z KABINY PILOTA ODPOWIEDZIAŁ: \n" +
+                                        "Ilość pocisków: " + playerBean.textFieldDevice1Player3_Value.getText() + "\n" +
+                                        " nie załadowano pocisk : " + "\n" +
                                         "rodzaju mechanizmu wystrzału: " + "nie ustawiono" + "\n", Main.commander);
                             }
                         }
@@ -107,7 +103,7 @@ public class MainController implements Initializable {
 
         time.setCycleCount(Timeline.INDEFINITE);
         time.getKeyFrames().add(frame);
-        if(time!=null){
+        if (time != null) {
             time.stop();
         }
         time.play();

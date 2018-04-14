@@ -22,6 +22,8 @@ public class Server extends UnicastRemoteObject implements ServerInterface
     private HashMap<String, ConnectedPlayer> players;
     private ServerController serverController;
 
+
+
     public Server(ServerController serverController) throws RemoteException
     {
         players = new HashMap<>();
@@ -44,6 +46,8 @@ public class Server extends UnicastRemoteObject implements ServerInterface
         {
             System.out.println("Error, commander is null.");
         }
+        serverController.refreshTables();
+
     }
 
     @Override
@@ -53,6 +57,8 @@ public class Server extends UnicastRemoteObject implements ServerInterface
         ConnectedCommander commander = new ConnectedCommander(connection, name);
         commander.getConnection().receiveScore(2137);
         commanders.put(name,commander);
+        serverController.refreshTables();
+
     }
 
     @Override
@@ -66,8 +72,8 @@ public class Server extends UnicastRemoteObject implements ServerInterface
             connectedCommander.decrementNumberOfPlayers();
             connectedCommander.getConnection().receivePlayerList(createPlayersList(player.getName()));
         }
-        serverController.refreshPlayersList();
-        serverController.refreshCaptainsList();
+        serverController.refreshTables();
+
     }
 
     @Override
@@ -95,8 +101,8 @@ public class Server extends UnicastRemoteObject implements ServerInterface
             }
         });
 
-        serverController.refreshPlayersList();
-        serverController.refreshCaptainsList();
+        serverController.refreshTables();
+
     }
 
     @Override
@@ -200,6 +206,13 @@ public class Server extends UnicastRemoteObject implements ServerInterface
 
     public HashMap<String, ConnectedPlayer> getPlayers() {
         return players;
+    }
+    public ServerController getServerController() {
+        return serverController;
+    }
+
+    public void setServerController(ServerController serverController) {
+        this.serverController = serverController;
     }
 
 }

@@ -50,7 +50,7 @@ public class WelcomeController extends UnicastRemoteObject implements Initializa
             Stage primaryStage = new Stage();
             Main.setMainStage(primaryStage);
             primaryStage.setTitle("Spaceteam v.2");
-            primaryStage.setScene(new Scene(parent, 718, 459));
+            primaryStage.setScene(new Scene(parent, 800, 459));
             Stage stage = (Stage) textFieldLogin.getScene().getWindow();
             stage.hide();
             primaryStage.show();
