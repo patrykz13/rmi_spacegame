@@ -38,6 +38,8 @@ public class MainController implements Initializable {
         {
             player = new Player1(Main.login, this, "kabina pilota",Main.commander);
             server = player.getServer();
+            server.broadcastNumberOfPlayers(Main.commander);
+
         } catch (Exception ex)
         {
             System.out.println(ex.getMessage());
@@ -105,6 +107,7 @@ public class MainController implements Initializable {
     public void exitFromApplication() {
         Platform.runLater(() -> {
             try {
+                server.broadcastNumberOfPlayers(Main.commander);
                 server.removePlayer(Main.login);
             } catch (RemoteException e) {
                 e.printStackTrace();

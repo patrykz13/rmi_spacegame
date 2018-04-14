@@ -1,4 +1,5 @@
-package player_3;
+package player3;
+
 
 
 import common.PlayerInterface;
@@ -13,13 +14,13 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
-public class player_3 extends UnicastRemoteObject implements PlayerInterface
+public class Player3 extends UnicastRemoteObject implements PlayerInterface
 {
 
     private ServerInterface server;
     private MainController controller;
 
-    public player_3(String name, MainController controller, String type, String commanderName) throws RemoteException
+    public Player3(String name, MainController controller, String type, String commanderName) throws RemoteException
     {
         try
         {

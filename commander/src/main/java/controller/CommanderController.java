@@ -3,16 +3,21 @@ package controller;
 import commander.Commander;
 import common.ServerInterface;
 import common.SpaceCommand;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.util.Duration;
 import main.Main;
 
 import java.net.URL;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -33,11 +38,12 @@ public class CommanderController implements Initializable {
     public Label labelCommander;
     public TextField labelRoundTime;
     public TextArea textAreaAnswer;
+    public Label labelTimeToTheEndOfRound;
     private Commander commander;
     private ServerInterface server;
     private ObservableList<String> players = FXCollections.observableArrayList();
-
     private Integer totalScore;
+    private Integer seconds;
     public void givePoints_onAction(ActionEvent actionEvent) {
         totalScore+=Integer.parseInt(textFieldPoints.getText());
         System.out.println(totalScore);
@@ -48,22 +54,36 @@ public class CommanderController implements Initializable {
 
     public void startRound_onAction(ActionEvent actionEvent) {
 
-        if (commander != null)
-        {
-            if (textFieldCockpit!=null)
-                broadcastCommand("kabina pilota", textFieldCockpit.getText(),Main.login);
-            if (textFieldBattleCannon!=null)
-                broadcastCommand("Działko bojowe", textFieldBattleCannon.getText(),Main.login);
-            if (textFieldLaserGun!=null)
-                broadcastCommand("działko laserowe", textFieldLaserGun.getText(),Main.login);
-            startRound(Integer.parseInt(labelRoundTime.getText()));
+        if(!players.isEmpty()){
+            if (!labelRoundTime.getText().equals(""))
+            {
+                if (textFieldCockpit!=null)
+                    broadcastCommand("kabina pilota", textFieldCockpit.getText(),Main.login);
+                if (textFieldBattleCannon!=null)
+                    broadcastCommand("Działko bojowe", textFieldBattleCannon.getText(),Main.login);
+                if (textFieldLaserGun!=null)
+                    broadcastCommand("działko laserowe", textFieldLaserGun.getText(),Main.login);
+                startRound(Integer.parseInt(labelRoundTime.getText()));
+            }
+            else{
+                customMessageBox.showMessageBox(Alert.AlertType.WARNING, "błąd",
+                        "Runda nie zostałą rozpoczęta.",
+                        "Powód: czas nie został podany.").showAndWait();
+            }
         }
+        else{
+            customMessageBox.showMessageBox(Alert.AlertType.WARNING, "błąd",
+                    "Runda nie zostałą rozpoczęta.",
+                    "Powód: brak graczy.").showAndWait();
+        }
+
 
     }
 
     private void startRound(Integer roundTime) {
         try
         {
+            startThread(roundTime);
             server.startRound(roundTime,Main.login);
         } catch (Exception ex)
         {
@@ -88,6 +108,41 @@ public class CommanderController implements Initializable {
         totalScore = 0;
         tableViewPlayer.setItems(players);
 
+    }
+
+    private void startThread(Integer integer) {
+        Timeline time = new Timeline();
+        seconds = integer;
+        KeyFrame frame = new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                seconds--;
+                buttonStartRound.setDisable(true);
+                labelTimeToTheEndOfRound.setText(seconds.toString());
+                if (seconds <= 0) {
+                    buttonStartRound.setDisable(false);
+                    initNewRoundComponents();
+                    time.stop();
+
+                }
+            }
+        });
+
+        time.setCycleCount(Timeline.INDEFINITE);
+        time.getKeyFrames().add(frame);
+        if(time!=null){
+            time.stop();
+        }
+        time.play();
+    }
+
+    private void initNewRoundComponents() {
+        textFieldLaserGun.setText("");
+        textFieldBattleCannon.setText("");
+        textFieldCockpit.setText("");
+        labelRoundTime.setText("");
+        labelTimeToTheEndOfRound.setText("---");
     }
 
     public void refresh_onAction(ActionEvent actionEvent) {
@@ -122,7 +177,6 @@ public class CommanderController implements Initializable {
             server.sendPoints(commanderName, points);
         } catch (Exception ex)
         {
-            System.out.println("kurwa");
             System.out.println(ex.getMessage());
         }
     }

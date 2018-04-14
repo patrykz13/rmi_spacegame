@@ -41,6 +41,7 @@ public class Main extends Application {
             if (server != null) {
                 try {
                     server.removePlayer(login);
+                    server.broadcastNumberOfPlayers(Main.commander);
                 } catch (RemoteException e) {
                     e.printStackTrace();
                 }

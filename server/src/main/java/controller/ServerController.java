@@ -33,6 +33,7 @@ public class ServerController implements Initializable {
     private Server ss;
     @FXML
     private TableColumn<ConnectedCommander, String> tableColumnCommanderName;
+    public TableColumn<ConnectedCommander,String> tableColumnCommandersPlayers;
     private ObservableList<ConnectedCommander> commanders = FXCollections.observableArrayList();
     private ObservableList<ConnectedPlayer> players = FXCollections.observableArrayList();
     public CustomMessageBox customMessageBox;
@@ -42,6 +43,7 @@ public class ServerController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         customMessageBox=new CustomMessageBox();
         tableColumnCommanderName.setCellValueFactory(new PropertyValueFactory<ConnectedCommander,String>("name"));
+        tableColumnCommandersPlayers.setCellValueFactory(new PropertyValueFactory<ConnectedCommander,String>("numberOfPlayers"));
         tableColumnPlayerName.setCellValueFactory(new PropertyValueFactory<ConnectedPlayer,String>("name"));
         tableColumnPlayerCommander.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCommander().getName()));        //
         tableViewCommander.setItems(commanders);

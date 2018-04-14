@@ -44,7 +44,6 @@ public class WelcomeController extends UnicastRemoteObject implements Initializa
         Main.server=server;
         FXMLLoader loader = new FXMLLoader();
         try {
-            server.broadcastNumberOfPlayers(Main.commander);
             loader.setLocation(getClass().getClassLoader().getResource("fxml/main.fxml"));
             loader.load();
             Parent parent = loader.getRoot();

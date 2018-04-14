@@ -43,6 +43,7 @@ public class MainController implements Initializable{
         {
             player = new Player2(Main.login, this, "działko laserowe",Main.commander);
             server = player.getServer();
+            server.broadcastNumberOfPlayers(Main.commander);
         } catch (Exception ex)
         {
             System.out.println(ex.getMessage());
@@ -87,6 +88,7 @@ public class MainController implements Initializable{
 
     public void exitFromApplication() {
         try {
+            server.broadcastNumberOfPlayers(Main.commander);
             server.removePlayer(Main.login);
         } catch (RemoteException e) {
             e.printStackTrace();

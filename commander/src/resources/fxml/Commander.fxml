@@ -92,12 +92,21 @@
             <HBox alignment="CENTER" prefHeight="22.0" prefWidth="269.9998779296875">
               <children>
                 <Label alignment="CENTER" prefWidth="146.0" text="czas rundy [s]" />
+                <Label alignment="CENTER" prefWidth="146.0" text="do końca rundy" />
               </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="27.0" prefWidth="270.0000999999975">
               <children>
-                <Label text="" />
-                <TextField id="textFieldPoints" fx:id="labelRoundTime" prefWidth="113.0" />
+                <VBox prefHeight="26.0" prefWidth="153.0">
+                  <children>
+                    <TextField id="textFieldPoints" fx:id="labelRoundTime" prefWidth="146.0" />
+                  </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="26.0" prefWidth="177.0">
+                  <children>
+                    <Label  fx:id="labelTimeToTheEndOfRound" alignment="CENTER" contentDisplay="CENTER" text="---" />
+                  </children>
+                </VBox>
               </children>
             </HBox>
           </children>

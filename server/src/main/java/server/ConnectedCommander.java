@@ -4,7 +4,7 @@ package server;
 import common.CommanderInterface;
 
 public class ConnectedCommander {
-    public String name;
+    private String name;
     private CommanderInterface connection;
     private Integer numberOfPlayers;
 

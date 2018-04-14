@@ -44,14 +44,13 @@ public class WelcomeController extends UnicastRemoteObject implements Initializa
         Main.server=server;
         FXMLLoader loader = new FXMLLoader();
         try {
-            server.broadcastNumberOfPlayers(Main.commander);
             loader.setLocation(getClass().getClassLoader().getResource("fxml/main.fxml"));
             loader.load();
             Parent parent = loader.getRoot();
             Stage primaryStage = new Stage();
             Main.setMainStage(primaryStage);
             primaryStage.setTitle("Spaceteam v.2");
-            primaryStage.setScene(new Scene(parent, 1066.9998779296875, 459));
+            primaryStage.setScene(new Scene(parent, 718, 459));
 
             Stage stage = (Stage) textFieldLogin.getScene().getWindow();
             stage.hide();

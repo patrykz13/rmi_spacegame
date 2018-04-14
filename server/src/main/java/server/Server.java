@@ -34,7 +34,6 @@ public class Server extends UnicastRemoteObject implements ServerInterface
     {
         System.out.println("Player " + name + type + " has connected.");
         ConnectedCommander connectedCommander = commanders.get(commanderName);
-        System.out.println(connectedCommander.name);
         ConnectedPlayer player = new ConnectedPlayer(connection, type, name,connectedCommander);
         players.put(name, player);
         if (connectedCommander != null)
@@ -61,8 +60,7 @@ public class Server extends UnicastRemoteObject implements ServerInterface
     {
         ConnectedPlayer player = players.get(name);
         ConnectedCommander connectedCommander = null;
-        if (commanders.containsKey(player.getName()))
-            connectedCommander = commanders.get(player.getName());
+        connectedCommander = commanders.get(player.getCommander().getName());
         players.remove(name);
         if (connectedCommander != null) {
             connectedCommander.decrementNumberOfPlayers();
@@ -91,7 +89,7 @@ public class Server extends UnicastRemoteObject implements ServerInterface
         captainsPlayers.forEach(player -> {
             try {
                 player.getConnection().lossConnectionWithServer();
-                players.remove(player);
+                players.remove(player.getName());
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
