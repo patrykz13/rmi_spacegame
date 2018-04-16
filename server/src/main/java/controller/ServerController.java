@@ -54,16 +54,16 @@ public class ServerController implements Initializable {
             players.remove(tableViewPlayer.getSelectionModel().getSelectedItem());
             selectedPlayer.getConnection().becomeKickout(true);
             selectedPlayer.getConnection().receiveCommand(" zostałeś wykickowany :(");
+            ConnectedPlayer c = ss.getPlayers().get(tableViewPlayer.getSelectionModel().getSelectedItem().getName());
+            ss.removePlayer(c.getName());
+
         } else
             customMessageBox.showMessageBox(Alert.AlertType.WARNING, "Ostrzeżenie",
                     "Operacja wyrzucenia kapitana z serwera nie powiedzie się.",
                     "Powód: nie zaznaczono kapitana.")
                     .showAndWait();
 
-        ConnectedPlayer c = ss.getPlayers().get(tableViewPlayer.getSelectionModel().getSelectedItem().getName());
-        System.out.println(c.getName());
 
-        ss.removePlayer(c.getName());
 
         //refreshTables();
     }
@@ -75,15 +75,19 @@ public class ServerController implements Initializable {
     public void refreshTables() {
         commanders.clear();
         players.clear();
-        if (ss.getCommanders() != null) {
-            for (Map.Entry<String, ConnectedCommander> entry : ss.getCommanders().entrySet()) {
-                commanders.add(entry.getValue());
+        try {
+            if (ss.getCommanders() != null) {
+                for (Map.Entry<String, ConnectedCommander> entry : ss.getCommanders().entrySet()) {
+                    commanders.add(entry.getValue());
+                }
             }
-        }
-        if (ss.getPlayers() != null) {
-            for (Map.Entry<String, ConnectedPlayer> entry : ss.getPlayers().entrySet()) {
-                players.add(entry.getValue());
+            if (ss.getPlayers() != null) {
+                for (Map.Entry<String, ConnectedPlayer> entry : ss.getPlayers().entrySet()) {
+                    players.add(entry.getValue());
+                }
             }
+        }catch (NullPointerException e){
+            e.getMessage();
         }
     }
 
