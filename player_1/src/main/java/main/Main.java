@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -38,6 +39,7 @@ public class Main extends Application {
         try {
             Main.mainStage = primaryStage;
             loader.setLocation(getClass().getClassLoader().getResource("fxml/welcome.fxml"));
+            primaryStage.getIcons().add(new Image("/image/player.png"));
             loader.load();
             Parent root = loader.getRoot();
             mainStage.setTitle("Spaceteam v.2");

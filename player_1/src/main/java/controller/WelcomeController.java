@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import main.Main;
 
@@ -51,6 +52,8 @@ public class WelcomeController extends UnicastRemoteObject implements Initializa
             Main.setMainStage(primaryStage);
             primaryStage.setTitle("Spaceteam v.2");
             primaryStage.setScene(new Scene(parent, 800, 459));
+            primaryStage.getIcons().add(new Image("/image/player.png"));
+
             Stage stage = (Stage) textFieldLogin.getScene().getWindow();
             stage.hide();
             primaryStage.show();

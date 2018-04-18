@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import server.ConnectedCommander;
 import server.ConnectedPlayer;
@@ -31,6 +32,8 @@ public class Main extends Application
             setMainStage(primaryStage);
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/fxml/server.fxml"));
+            primaryStage.getIcons().add(new Image("/image/server.png"));
+
             loader.load();
             Parent root = loader.getRoot();
             primaryStage.setScene(new Scene(root, 906, 406));

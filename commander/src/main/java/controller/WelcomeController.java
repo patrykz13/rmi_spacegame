@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import main.Main;
 
@@ -25,10 +26,13 @@ public class WelcomeController implements Initializable {
         FXMLLoader loader = new FXMLLoader();
         try {
             loader.setLocation(getClass().getClassLoader().getResource("fxml/Commander.fxml"));
+
             loader.load();
             Parent parent = loader.getRoot();
             Stage primaryStage = new Stage();
             Main.setMainStage(primaryStage);
+            primaryStage.getIcons().add(new Image("/image/commander.jpg"));
+
             primaryStage.setTitle("Spaceteam v.2");
 
             primaryStage.setScene(new Scene(parent, 888, 401));
