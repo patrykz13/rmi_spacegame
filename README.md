@@ -14,4 +14,4 @@ Java Beans zostanie poprawnie zaciągnięta z lokalnego repozytorium Mavena.
 
 ### Autor:
 
-- Kamil Cieślik <br />
+- Patryk Zdral <br />
